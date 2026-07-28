@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.2"
+   width="216.132"
+   height="251.95586"
+   id="svg2"
+   sodipodi:docname="Spain_traffic_signal_s64b.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview8304"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.7977381"
+     inkscape:cx="113.84196"
+     inkscape:cy="117.05885"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12092" />
+  <metadata
+     id="metadata3097">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3095" />
+  <g
+     id="g9437"
+     transform="matrix(0.12213559,0,0,0.12213559,-157.64613,-29.482566)">
+    <g
+       id="g12092">
+      <g
+         id="g14439"
+         transform="matrix(-1,0,0,1,4351.1008,0)">
+        <g
+           id="g14054"
+           transform="matrix(0.42042346,0,0,0.42042346,1630.9062,521.3717)">
+          <path
+             id="rect13334"
+             style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:9.73735;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M -601.30823,-656.20932 H 3192.2398 c 109.7152,0 198.0418,88.32664 198.0418,198.04176 V 4033.0395 c 0,109.7151 -88.3266,198.0417 -198.0418,198.0417 H -601.30823 c -109.71512,0 -198.04176,-88.3266 -198.04176,-198.0417 V -458.16756 c 0,-109.71512 88.32664,-198.04176 198.04176,-198.04176 z" />
+          <path
+             id="rect13942"
+             style="fill:#ffffff;fill-rule:evenodd;stroke-width:400.72;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+             d="M -600.40771,-650.96411 H 3191.3393 c 107.3082,0 193.6971,86.3889 193.6971,193.69707 V 4032.1389 c 0,107.3082 -86.3889,193.6971 -193.6971,193.6971 H -600.40771 c -107.30817,0 -193.69707,-86.3889 -193.69707,-193.6971 V -457.26704 c 0,-107.30817 86.3889,-193.69707 193.69707,-193.69707 z" />
+          <path
+             id="rect13998"
+             style="fill:#19408b;fill-opacity:1;fill-rule:evenodd;stroke-width:18.3435;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+             d="M -601.36074,4144.3649 H 3191.1836 c 62.2832,0 112.4244,-50.1412 112.4244,-112.4243 V -458.17215 c 0,-62.28302 -50.1412,-112.42434 -112.4244,-112.42434 H -601.36074 c -62.28313,0 -112.42435,50.14132 -112.42435,112.42434 V 4031.9406 c 0,62.2831 50.14122,112.4243 112.42435,112.4243 z" />
+          <path
+             fill-rule="evenodd"
+             fill="#ffffff"
+             fill-opacity="1"
+             d="m 1638.7916,3921.6786 h 186.6948 V 1822.3639 l 650.6174,650.66 v 1448.6547 h 185.5861 V 2396.6061 L 1825.4864,1559.294 V 89.871661 h 185.5861 L 1732.6933,-356.60951 1453.2055,89.871661 h 185.5861 V 3921.6786"
+             id="path12168"
+             style="stroke-width:10.9168" />
+          <path
+             fill-rule="evenodd"
+             fill="#ffffff"
+             fill-opacity="1"
+             d="M 802.58801,3921.6786 H 988.1741 V 89.871661 h 186.6522 L 895.38105,-356.60951 615.8932,89.871661 H 802.58801 V 3921.6786"
+             id="path12170"
+             style="stroke-width:10.9168" />
+          <path
+             fill-rule="evenodd"
+             fill="#ffffff"
+             fill-opacity="1"
+             d="M -34.76684,3921.6786 H 151.92797 V 89.871661 H 337.51406 L 58.026207,-356.60951 -220.35293,89.871661 H -34.76684 V 3921.6786"
+             id="path12172"
+             style="stroke-width:10.9168" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,3132 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     DOCTYPE: Tells the browser this is an HTML5 document.
+     Without this, the browser might render in "quirks mode"
+     (old broken mode). Always start with this!
+     Learn: https://www.w3schools.com/tags/tag_doctype.asp
+     ============================================================ -->
+
+<!-- ============================================================
+  <html> - The ROOT element of every web page.
+  lang="en" tells the browser/screen-readers this page is in English.
+  Learn: https://www.w3schools.com/tags/tag_html.asp
+  ============================================================ -->
+<html lang="en">
+<head><meta name="robots" content="noindex">
+  <!-- ============================================================
+    <head><meta name="robots" content="noindex"> - CONTAINER for metadata (data about data).
+    Nothing in <head><meta name="robots" content="noindex"> is VISIBLE on the page. It holds:
+    - character encoding (<meta charset>)
+    - page title (<title>)
+    - styles (<style> or <link>)
+    - scripts (<script>)
+    - other metadata
+
+    Learn: https://www.w3schools.com/html/html_head.asp
+    ============================================================ -->
+
+  <!-- ============================================================
+    <meta charset="UTF-8"> - Sets character encoding to UTF-8.
+    UTF-8 supports ALL languages (Spanish ñ, Gujarati આ, Chinese 中)
+    on the same page. Without this, special chars may show as garbage.
+
+    Learn: https://www.w3schools.com/tags/tag_meta.asp
+    ============================================================ -->
+  <meta charset="UTF-8">
+
+  <!-- ============================================================
+    <meta name="viewport"> - CRITICAL for mobile devices.
+    content="width=device-width"  → page width = device screen width
+    initial-scale=1.0             → no zoom by default
+
+    Without this, phones would render the page zoomed out (like a tiny
+    desktop page) and the user would have to pinch-zoom to read.
+
+    Learn: https://www.w3schools.com/css/css_rwd_viewport.asp
+    ============================================================ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================
+    <title> - The text shown in the browser TAB.
+    Also used by search engines (SEO) and as the default bookmark name.
+    Learn: https://www.w3schools.com/tags/tag_title.asp
+    ============================================================ -->
+  <title>DLESP v2 - SQLite Edition</title>
+
+  <!-- ============================================================
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                  ALL CSS STYLES START HERE                   ║
+    ╚══════════════════════════════════════════════════════════════╝
+
+    CSS = Cascading Style Sheets. It controls how HTML elements
+    LOOK (colors, sizes, layout, animations).
+
+    Three ways to add CSS:
+    1. INLINE  - style="color:red" on the element itself (BAD for reuse)
+    2. INTERNAL - <style> in <head><meta name="robots" content="noindex"> (what we use here) (GOOD for single page)
+    3. EXTERNAL - <link rel="stylesheet" href="file.css"> (BEST for multi-page)
+
+    We use INTERNAL so everything is in ONE file (portable offline).
+
+    RULE FORMAT:
+    selector { property: value; property: value; }
+
+    SELECTOR: which HTML element(s) to style
+    PROPERTY: what aspect to change (color, size, position...)
+    VALUE:    what value to set
+
+    Example:  h1 { color: blue; font-size: 24px; }
+
+    Learn CSS basics: https://www.w3schools.com/css/default.asp
+    ============================================================ -->
+  <style>
+    /* =============================================================
+       ── 1. CSS CUSTOM PROPERTIES (Variables) ──
+
+       --variable-name: value;  defines a variable
+       var(--variable-name)     uses it
+
+       Why use variables?
+       - Change ONE value to update the WHOLE theme
+       - Makes dark mode switching easy
+       - Keeps colors consistent
+
+       These variables are declared on :root (the <html> element)
+       so they are available EVERYWHERE in the CSS.
+
+       Learn: https://www.w3schools.com/css/css3_variables.asp
+       ============================================================= */
+    :root {
+      /* ===========================================================
+         Color palette for LIGHT MODE (default).
+
+         Hex colors (#RRGGBB):
+         #RR = Red   (00-FF, 0-255)
+         #GG = Green
+         #BB = Blue
+         #A  = Alpha (opacity, 0=transparent, 1=opaque)
+         Example: #ff6600 = full red, 40% green, 0 blue = orange
+
+         Learn colors: https://www.w3schools.com/css/css_colors.asp
+         =========================================================== */
+      --bg-primary: #f5f7fa;       /* Main page background - light gray-blue */
+      --bg-card: #ffffff;           /* Card background - pure white */
+      --bg-nav: #2c3e50;           /* Navigation bar - dark navy blue */
+      --bg-hover: #e8edf2;         /* Hover effect - slightly darker gray */
+      --text-primary: #2c3e50;     /* Main text - dark navy (easy to read) */
+      --text-secondary: #6c7a89;   /* Subtle text - medium gray */
+      --text-nav: #ecf0f1;         /* Nav text - off-white */
+      --text-nav-hover: #3498db;   /* Nav text on hover - bright blue */
+      --accent: #3498db;           /* Accent/button color - bright blue */
+      --accent-hover: #2980b9;     /* Accent darker - for hover effect */
+      --success: #27ae60;          /* Correct answer - green */
+      --danger: #e74c3c;           /* Wrong answer - red */
+      --warning: #f39c12;          /* Warning/attention - amber/orange */
+      --border: #dce1e8;          /* Subtle borders - light gray */
+      --shadow: rgba(0,0,0,0.08);  /* Shadow color - very faint black */
+
+      /* ===========================================================
+         Font settings
+         -webkit-font-smoothing: makes text look smoother on Mac/Safari
+         Learn fonts: https://www.w3schools.com/css/css_font.asp
+         =========================================================== */
+      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* ↑ "font stack" - browser tries first font, then fallbacks
+         'Segoe UI' = Windows default pretty font
+         Tahoma, Geneva = alternatives
+         sans-serif = last resort (any sans-serif font on system) */
+
+      --font-size-base: 16px;      /* Base text size. 16px = browser default */
+      --font-size-sm: 14px;        /* Small text */
+      --font-size-lg: 18px;        /* Large text */
+      --font-size-xl: 24px;        /* Extra large */
+      --font-size-xxl: 32px;       /* Heading size */
+
+      /* ===========================================================
+         Spacing scale (margins, paddings)
+         rem = RELATIVE to root font-size (16px by default)
+         1rem = 16px, 0.5rem = 8px, 2rem = 32px
+         Using rem instead of px makes it RESPONSIVE to user's font settings.
+
+         Learn: https://www.w3schools.com/cssref/css_units.asp
+         =========================================================== */
+      --space-xs: 0.25rem;  /* 4px  - tiny gap */
+      --space-sm: 0.5rem;   /* 8px  - small gap */
+      --space-md: 1rem;     /* 16px - normal gap */
+      --space-lg: 1.5rem;   /* 24px - big gap */
+      --space-xl: 2rem;     /* 32px - huge gap */
+
+      /* ===========================================================
+         Border radius (rounding corners)
+         Higher = rounder corners
+         Learn: https://www.w3schools.com/cssref/css3_pr_border-radius.asp
+         =========================================================== */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+
+      /* ===========================================================
+         Transition (animation timing)
+         Used for smooth color/size changes on hover.
+         Learn: https://www.w3schools.com/css/css3_transitions.asp
+         =========================================================== */
+      --transition: 0.2s ease;  /* 0.2 second duration, ease = smooth start/end */
+    }
+
+    /* =============================================================
+       ── 2. DARK MODE OVERRIDES ──
+
+       When <body> has class "dark", we OVERRIDE the CSS variables.
+       Every property that uses var(--xxx) automatically changes color.
+       That's the MAGIC of CSS variables!
+
+       .dark = class selector (matches <body class="dark">)
+
+       Learn class selectors: https://www.w3schools.com/css/css_selectors.asp
+       ============================================================= */
+    body.dark {
+      --bg-primary: #1a1a2e;       /* Very dark navy */
+      --bg-card: #16213e;           /* Dark blue card */
+      --bg-nav: #0f3460;            /* Medium dark blue nav */
+      --bg-hover: #1a1a3e;          /* Hover - slightly lighter */
+      --text-primary: #e8e8e8;      /* Near-white text */
+      --text-secondary: #a0a0b0;    /* Gray secondary */
+      --border: #2a2a4a;            /* Dark border */
+      --shadow: rgba(0,0,0,0.3);    /* Stronger shadow */
+    }
+
+    /* =============================================================
+       ── 3. RESET / BASE STYLES ──
+
+       Browsers have built-in default styles that differ.
+       We "normalize" everything to start from a clean slate.
+
+       The * selector matches EVERY element on the page.
+       Learn: https://www.w3schools.com/css/css_universal_selector.asp
+       ============================================================= */
+    * {
+      /* box-sizing: border-box makes padding/borders count INSIDE
+         the element's total width, not ADD to it. Much easier to layout.
+         Learn: https://www.w3schools.com/css/css3_box-sizing.asp */
+      box-sizing: border-box;
+
+      /* Remove default margins that browsers add to <body>, <p>, etc. */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* =============================================================
+       <body> - The main visible container of the page.
+       Everything you see is inside <body>.
+       Learn: https://www.w3schools.com/tags/tag_body.asp
+       ============================================================= */
+    body {
+      /* Apply the font family defined in :root */
+      font-family: var(--font-main);
+
+      /* Base font size */
+      font-size: var(--font-size-base);
+
+      /* Background color using our variable (changes with dark mode) */
+      background-color: var(--bg-primary);
+
+      /* Text color using our variable (changes with dark mode) */
+      color: var(--text-primary);
+
+      /* line-height: 1.6 → each line is 1.6x the font height (easier to read)
+         Learn: https://www.w3schools.com/cssref/pr_dim_line-height.asp */
+      line-height: 1.6;
+
+      /* min-height: 100vh forces body to be at least as tall as the
+         browser window (100% of the Viewport Height).
+         vh = viewport height unit. 100vh = full screen height.
+         Learn: https://www.w3schools.com/cssref/css_units.asp */
+      min-height: 100vh;
+
+      /* display: flex + flex-direction: column stacks children VERTICALLY.
+         This is a Flexbox layout - modern way to arrange elements.
+         Learn Flexbox: https://www.w3schools.com/css/css3_flexbox.asp */
+      display: flex;
+      flex-direction: column;
+
+      /* Smooth color transitions when switching to dark mode */
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    /* =============================================================
+       ── 4. NAVIGATION BAR ──
+
+       <nav> element: semantic HTML for navigation sections.
+       Learn: https://www.w3schools.com/tags/tag_nav.asp
+       ============================================================= */
+    nav {
+      /* Fixed at top: sticks to top even when scrolling */
+      position: sticky;
+      top: 0;
+
+      /* z-index: stacking order. Higher = in front.
+         1000 ensures nav is ALWAYS above other content.
+         Learn: https://www.w3schools.com/cssref/pr_pos_z-index.asp */
+      z-index: 1000;
+
+      background-color: var(--bg-nav);
+      color: var(--text-nav);
+
+      /* display: flex + align-items: center → children align in a row,
+         vertically centered. */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* ↑ space-between pushes first child left, last child right */
+
+      padding: var(--space-sm) var(--space-md);
+      box-shadow: 0 2px 8px var(--shadow);
+      /* ↑ box-shadow creates a drop shadow under the nav
+         offset-x: 0 | offset-y: 2px | blur: 8px | color: var(--shadow) */
+    }
+
+    /* Style for the <h1> heading inside <nav> */
+    nav h1 {
+      font-size: var(--font-size-lg);
+      font-weight: 700;           /* Bold */
+      letter-spacing: 0.5px;      /* Space between letters */
+    }
+
+    /* =============================================================
+       .nav-links - Container for the right-side nav buttons
+       The . (dot) prefix means it's a CLASS selector.
+       class="nav-links" on the element matches this rule.
+
+       Learn CSS classes: https://www.w3schools.com/css/css_selectors.asp
+       ============================================================= */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);       /* gap: space between flex children */
+      flex-wrap: wrap;            /* wrap to next line if too narrow */
+    }
+
+    /* Style for <button> elements inside .nav-links */
+    .nav-links button {
+      background: none;           /* Transparent background */
+      border: 1px solid rgba(255,255,255,0.2);  /* Very faint white border */
+      color: var(--text-nav);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      cursor: pointer;            /* Changes cursor to hand 👆 on hover */
+      font-size: var(--font-size-sm);
+      transition: all var(--transition);
+      /* ↑ 'all' means ALL animatable properties change smoothly */
+    }
+
+    /* :hover = PSEUDO-CLASS - styles applied when mouse hovers over element
+       Learn: https://www.w3schools.com/css/css_pseudo_classes.asp */
+    .nav-links button:hover {
+      background: rgba(255,255,255,0.1);  /* Slight white background on hover */
+      border-color: var(--text-nav-hover); /* Highlight border */
+      color: var(--text-nav-hover);
+    }
+    .nav-link-btn {
+      background: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      color: var(--text-nav);
+      padding: var(--space-xs) var(--space-sm);
+      font-size: var(--font-size-sm);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .nav-link-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--text-nav-hover);
+      color: var(--text-nav-hover);
+    }
+
+    /* =============================================================
+       ── 5. MAIN CONTENT AREA ──
+
+       <main> tag: semantic HTML for the main content of the page.
+       Learn: https://www.w3schools.com/tags/tag_main.asp
+       ============================================================= */
+    main {
+      /* flex: 1 makes main grow to fill remaining vertical space.
+         This pushes the footer down. */
+      flex: 1;
+
+      /* padding shorthand: top right bottom left
+         OR: top/bottom left/right
+         2 values = first is top/bottom, second is left/right */
+      padding: var(--space-lg) var(--space-md);
+
+      /* max-width prevents content from stretching too wide on big screens.
+         Good readability = 45-75 characters per line. */
+      max-width: 900px;
+      width: 100%;               /* Fill available width up to max-width */
+      margin: 0 auto;            /* Center the <main> horizontally */
+      /* ↑ margin: 0 auto is the STANDARD way to center a block element
+         Learn centering: https://www.w3schools.com/css/css_align.asp */
+    }
+
+    /* =============================================================
+       ── 6. UTILITY / COMPONENT CLASSES ──
+       ============================================================= */
+
+    /* .hidden - hides an element completely
+       display: none removes it from the page (not just invisible).
+       Learn: https://www.w3schools.com/css/css_display_visibility.asp */
+    .hidden {
+      display: none !important;
+      /* !important OVERRIDES any other rule. Use sparingly!
+         Here it ensures .hidden ALWAYS wins. */
+    }
+
+    /* .card - a white rounded box used everywhere in the app */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      box-shadow: 0 1px 4px var(--shadow);
+      transition: background-color var(--transition), border-color var(--transition);
+    }
+
+    /* =============================================================
+       BUTTON STYLING
+       Learn buttons: https://www.w3schools.com/css/css3_buttons.asp
+       ============================================================= */
+    .btn {
+      display: inline-block;        /* inline but can have width/padding */
+      padding: var(--space-sm) var(--space-md);
+      border: none;                 /* Remove default button border */
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+      font-family: inherit;         /* Use the same font as parent */
+      transition: all var(--transition);
+      text-decoration: none;        /* Remove underline (for <a> tags) */
+    }
+
+    /* .btn-primary - Main action button (blue) */
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);  /* Slight lift effect on hover */
+      /* ↑ translateY moves element UP by 1px (negative Y = up) */
+      box-shadow: 0 2px 8px rgba(52,152,219,0.3);  /* Blue glow shadow */
+    }
+
+    /* .btn-success - Correct/good action button (green) */
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+    .btn-success:hover {
+      opacity: 0.9;   /* 0.9 = 90% opacity (slightly transparent) */
+    }
+
+    /* .btn-danger - Delete/wrong action button (red) */
+    .btn-danger {
+      background: var(--danger);
+      color: white;
+    }
+    .btn-danger:hover {
+      opacity: 0.9;
+    }
+
+    /* .btn-sm - Smaller button variant */
+    .btn-sm {
+      padding: var(--space-xs) var(--space-sm);
+      font-size: var(--font-size-sm);
+    }
+
+    /* =============================================================
+       FORM ELEMENTS (select, input, textarea)
+       Learn forms: https://www.w3schools.com/html/html_forms.asp
+       ============================================================= */
+    select, input[type="text"], textarea {
+      padding: var(--space-sm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-sm);
+      font-family: inherit;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      transition: border-color var(--transition);
+    }
+
+    /* :focus = when user clicks/tabs into this element */
+    select:focus, input[type="text"]:focus, textarea:focus {
+      outline: none;             /* Remove default browser outline */
+      border-color: var(--accent);  /* Blue border = user knows it's focused */
+      box-shadow: 0 0 0 3px rgba(52,152,219,0.2);  /* Blue glow ring */
+    }
+
+    /* =============================================================
+       ── 7. QUESTION DISPLAY ──
+
+       The area where a single question and its options are shown.
+       ============================================================= */
+    #question-area {
+      /* margin-bottom adds space BELOW this element */
+      margin-bottom: var(--space-lg);
+    }
+
+    /* .q-text - The question text (what the user reads) */
+    .q-text {
+      font-size: var(--font-size-lg);
+      font-weight: 600;          /* Semi-bold */
+      margin-bottom: var(--space-md);
+      line-height: 1.5;
+    }
+
+    /* .q-options - Container for the A/B/C answer options */
+    .q-options {
+      display: flex;
+      flex-direction: column;    /* Stack options vertically */
+      gap: var(--space-sm);
+    }
+
+    /* Each option is a label wrapping a radio button + text */
+.q-option {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-sm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      user-select: none;  /* Prevent text selection on click */
+    }
+
+    /* Highlight option on hover */
+    .q-option:hover {
+      background: var(--bg-hover);
+      border-color: var(--accent);
+    }
+
+    /* When the radio INPUT is CHECKED, highlight its parent label */
+    .q-option input[type="radio"]:checked + .option-text {
+      font-weight: 600;
+    }
+
+    /* .q-option.correct - Applied by JS after checking answer */
+    .q-option.correct {
+      border-color: var(--success) !important;
+      background: rgba(39,174,96,0.1);
+    }
+
+    /* .q-option.wrong - Applied by JS after checking answer */
+    .q-option.wrong {
+      border-color: var(--danger) !important;
+      background: rgba(231,76,60,0.1);
+    }
+
+    /* .q-feedback - Shows "Correct!" or "Wrong!" after answering */
+    .q-feedback {
+      margin-top: var(--space-sm);
+      padding: var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .q-feedback.correct { background: rgba(39,174,96,0.15); color: var(--success); }
+    .q-feedback.wrong { background: rgba(231,76,60,0.15); color: var(--danger); }
+
+    /* .q-explanation - Extra explanation text shown after answer */
+    .q-explanation {
+      margin-top: var(--space-sm);
+      padding: var(--space-sm);
+      font-style: italic;        /* Slanted text */
+      color: var(--text-secondary);
+      border-left: 3px solid var(--accent);  /* Blue left border */
+    }
+
+    /* =============================================================
+       ── 8. LANGUAGE TOGGLE (ES / EN / ES+EN) ──
+       ============================================================= */
+    .lang-toggle {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;          /* Children don't spill out of rounded corners */
+    }
+
+    .lang-btn {
+      padding: var(--space-xs) var(--space-sm);
+      border: none;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+      transition: all var(--transition);
+    }
+
+    /* .lang-btn.active - the selected language button */
+    .lang-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .lang-btn:not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+
+    /* =============================================================
+       ── 9. QUIZ MODE SPECIFIC ──
+       ============================================================= */
+    #quiz-timer {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      text-align: center;
+      padding: var(--space-md);
+      font-variant-numeric: tabular-nums;  /* Numbers all same width → no jitter */
+    }
+
+    #quiz-timer.warning {
+      color: var(--warning);
+    }
+
+    #quiz-timer.danger {
+      color: var(--danger);
+      animation: pulse 1s infinite;  /* Blinking animation */
+    }
+
+    /* =============================================================
+       @keyframes - Defines an ANIMATION called 'pulse'
+       The element pulses between opacity 1 and 0.5.
+       Learn animations: https://www.w3schools.com/css/css3_animations.asp
+       ============================================================= */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Progress bar for quiz */
+    .progress-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: var(--space-md);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+      transition: width 0.3s ease;  /* Smooth width change */
+      /* width is set dynamically by JavaScript */
+    }
+
+    /* =============================================================
+       ── 10. STATS DISPLAY ──
+       ============================================================= */
+    .stats-grid {
+      display: grid;
+      /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))
+         Creates a responsive grid that adjusts columns based on width.
+         auto-fit = as many columns as fit
+         minmax(140px, 1fr) = each column at least 140px, then equal share
+
+         Learn Grid: https://www.w3schools.com/css/css_grid.asp
+         Learn auto-fit/minmax: https://www.w3schools.com/css/css_grid_container.asp */
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-sm);
+      text-align: center;
+      transition: background-color var(--transition);
+    }
+
+    .stat-card .stat-value {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-card .stat-label {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+    }
+
+    /* =============================================================
+       ── 11. FILTERS / SEARCH ──
+       ============================================================= */
+    .filters {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-md);
+      align-items: center;
+    }
+
+    .filters select, .filters input {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    /* =============================================================
+       ── 12. PAGINATION ──
+       ============================================================= */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .pagination button {
+      padding: var(--space-xs) var(--space-sm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .pagination button:hover:not(:disabled) {
+      background: var(--accent);
+      color: white;
+    }
+
+    .pagination button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;  /* ⛔ cursor */
+    }
+
+    /* =============================================================
+       ── 13. BOOKMARKS & NOTES ──
+       ============================================================= */
+    .bookmark-btn {
+      background: none;
+      border: none;
+      font-size: var(--font-size-xl);
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity var(--transition);
+    }
+
+    .bookmark-btn.bookmarked {
+      opacity: 1;
+    }
+
+    .notes-textarea {
+      width: 100%;
+      min-height: 80px;
+      resize: vertical;        /* User can drag to resize vertically */
+      margin-top: var(--space-sm);
+    }
+
+    /* ── Quiz review clickable row ── */
+    .q-row.clickable:hover {
+      background: var(--accent);
+    }
+    .q-row.clickable:active {
+      opacity: 0.7;
+    }
+
+    /* ── Quiz flag button styling ── */
+    #quiz-flag-btn {
+      transition: all var(--transition);
+    }
+
+    /* =============================================================
+       ── 14. RESPONSIVE DESIGN ──
+
+       @media (max-width: 600px) - These styles activate ONLY when
+       the screen width is 600px or LESS (phones).
+
+       This is called a "media query" - the FOUNDATION of responsive design.
+       Learn: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+       ============================================================= */
+    @media (max-width: 600px) {
+      body {
+        font-size: var(--font-size-sm);  /* Smaller text on phones */
+      }
+
+      nav h1 {
+        font-size: var(--font-size-base);  /* Smaller heading on phones */
+      }
+
+      .nav-links button {
+        font-size: 12px;
+        padding: 2px 6px;
+      }
+
+      .nav-link-btn {
+        font-size: 12px;
+        padding: 2px 6px;
+      }
+
+      main {
+        padding: var(--space-sm);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns max on phone */
+      }
+
+      .filters {
+        flex-direction: column;  /* Stack filters vertically on phone */
+      }
+
+      .filters select, .filters input {
+        width: 100%;
+      }
+
+      #quiz-timer {
+        font-size: var(--font-size-lg);
+      }
+    }
+
+    /* =============================================================
+       ── 15. SCROLL CONTAINER ──
+
+       When viewing questions in a list, this container scrolls
+       while the top bar stays fixed.
+       ============================================================= */
+    .scroll-container {
+      max-height: 60vh;          /* 60% of viewport height */
+      overflow-y: auto;          /* Vertical scrollbar when content overflows */
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-sm);
+    }
+
+    /* Each row in a mini question list */
+    .q-row {
+      padding: var(--space-sm);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .q-row:last-child {
+      border-bottom: none;       /* No border on last row */
+    }
+
+    .q-row:hover {
+      background: var(--bg-hover);
+    }
+
+    /* Text for the source badge (e.g., "Todotest", "VialTest") */
+    .source-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--accent);
+      color: white;
+      margin-right: var(--space-xs);
+    }
+  </style>
+  <!-- ============================================================
+    END OF CSS - Everything above is styling rules.
+    Now we move to the HTML structure (visible content).
+    ============================================================ -->
+</head>
+
+<!-- ============================================================
+  <body> START - Everything VISIBLE goes inside here.
+  ============================================================ -->
+<body>
+
+  <!-- ============================================================
+    <nav> - NAVIGATION BAR (top of page)
+    Contains: app title + action buttons
+
+    The onclick attributes call JavaScript functions when clicked.
+    We'll define those functions later in the <script> section.
+
+    Learn HTML attributes: https://www.w3schools.com/html/html_attributes.asp
+    ============================================================ -->
+  <nav>
+    <!-- <h1> = heading level 1 (most important heading)
+         Learn: https://www.w3schools.com/tags/tag_hn.asp -->
+    <h1>&#x1F36D; DLESP v2 </h1>
+    <!-- &#x1F36D; is the lollipop emoji (a fun icon for the app)
+         The version badge tells you this is the SQLite-powered edition.
+         Learn HTML entities: https://www.w3schools.com/html/html_entities.asp -->
+
+    <div class="nav-links">
+      <!--
+        Each button has:
+        - class="btn btn-sm" for styling
+        - onclick="functionName()" - runs JS when clicked
+
+        Learn onclick events: https://www.w3schools.com/jsref/event_onclick.asp
+      -->
+      <button onclick="showHome()" title="Home">&#x1F3E0; Home</button>
+      <button onclick="showStudyMode()" title="Browse all questions">&#x1F50D; Study</button>
+      <button onclick="showQuizSetup()" title="Take a quiz">&#x270F;&#xFE0F; Quiz</button>
+      <button onclick="showBookmarks()" title="Your bookmarked questions">&#x1F516; Bookmarks</button>
+      <button onclick="showStats()" title="Your quiz history and statistics">&#x1F4CA; Stats</button>
+      <a href="Driving-Manual-Pages_2/book.html" target="_blank" title="Driving Manual" class="nav-link-btn">&#x1F4D6; Manual</a>
+      <a href="Driving-Manual-Pages_2/signs.html" target="_blank" title="Road Signs" class="nav-link-btn">&#x1F6A6; Signs</a>
+      <button onclick="toggleDarkMode()" title="Toggle dark/light mode">
+        <span id="dark-icon">&#x1F319;</span>
+        <!-- 🌙 moon emoji (dark mode) / ☀️ sun emoji will toggle via JS -->
+      </button>
+
+      <!-- ============================================================
+        Language toggle buttons - ES / EN / ES+EN
+        Learn <select> dropdowns: https://www.w3schools.com/tags/tag_select.asp
+        ============================================================ -->
+      <select id="lang-select" onchange="changeLanguage(this.value)" title="Choose language">
+        <option value="es">ES (Espa&#xF1;ol)</option>
+        <option value="en" selected>EN (English)</option>
+        <option value="gu">GU (Gujarati)</option>
+        <option value="both">ES+EN (Both)</option>
+        <option value="all">ES+EN+GU (All)</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+    <main> - MAIN CONTENT
+
+    We use divs with id attributes as CONTAINERS for different views:
+    - #study-view   → Study mode (browse questions)
+    - #quiz-view    → Quiz mode (timed test)
+    - #question-view → Single question detail view
+    - #bookmarks-view → Bookmarked questions
+    - #stats-view   → Quiz statistics
+
+    Only ONE view is visible at a time. JavaScript shows/hides them
+    by toggling the .hidden class.
+
+    Learn <div>: https://www.w3schools.com/tags/tag_div.asp
+    ============================================================ -->
+  <main>
+
+    <!-- ── LOADING SCREEN ── -->
+    <div id="loading-screen" class="card" style="text-align:center; padding: var(--space-xl);">
+      <p style="font-size:var(--font-size-xl);">&#x23F3; Loading database...</p>
+      <p id="loading-status">Initializing SQL engine...</p>
+      <progress id="loading-bar" value="0" max="100" style="width:100%; margin-top:var(--space-md);"></progress>
+      <!--
+        <progress> element = native browser progress bar
+        max="100"     → range is 0 to 100
+        value="0"     → starts at 0%, JS will update it
+        Learn: https://www.w3schools.com/tags/tag_progress.asp
+      -->
+    </div>
+
+    <!-- ── HOME VIEW ── -->
+    <div id="home-view" class="card" style="text-align:center;padding:var(--space-xl);">
+      <h2 style="font-size:var(--font-size-xxl);margin-bottom:var(--space-md);">
+        &#x1F36D; Driving License Exam Study
+      </h2>
+      <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);font-size:var(--font-size-lg);">
+        Spanish DGT test questions &bull; 3 languages &bull; <span id="question-count"></span> questions
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);justify-content:center;">
+        <button class="btn btn-primary" onclick="showStudyMode()" style="padding:var(--space-md) var(--space-xl);font-size:var(--font-size-lg);">
+          &#x1F50D; Study
+        </button>
+        <button class="btn btn-success" onclick="showQuizSetup()" style="padding:var(--space-md) var(--space-xl);font-size:var(--font-size-lg);">
+          &#x270F;&#xFE0F; Quiz
+        </button>
+        <button class="btn" onclick="showBookmarks()" style="padding:var(--space-md) var(--space-xl);font-size:var(--font-size-lg);border:1px solid var(--border);">
+          &#x1F516; Bookmarks
+        </button>
+        <button class="btn" onclick="showStats()" style="padding:var(--space-md) var(--space-xl);font-size:var(--font-size-lg);border:1px solid var(--border);">
+          &#x1F4CA; Stats
+        </button>
+      </div>
+    </div>
+
+    <!-- ── STUDY VIEW ── -->
+    <!--
+      id="study-view" - JavaScript uses document.getElementById('study-view')
+      to find this element and show/hide it.
+
+      It starts hidden (class="hidden"). JS will show it after DB loads.
+    -->
+    <div id="study-view" class="hidden">
+      <div class="card">
+        <h2>&#x1F50D; Study Mode</h2>
+        <p style="color:var(--text-secondary); margin-bottom:var(--space-sm);">
+          Browse all questions. Use filters to narrow down.
+        </p>
+
+        <!-- ── FILTERS ROW ── -->
+        <div class="filters">
+          <!--
+            <select> = dropdown menu
+            onchange calls a function when user picks a different option
+            Learn: https://www.w3schools.com/tags/tag_select.asp
+          -->
+          <select id="filter-source" onchange="applyFilters()">
+            <option value="all">All Sources</option>
+          </select>
+
+          <input type="text" id="filter-search" placeholder="&#x1F50D; Search questions..."
+                 oninput="applyFilters()" title="Type to search">
+          <!--
+            oninput="applyFilters()" - calls the function EVERY TIME
+            the user types or changes the text in this box.
+          -->
+        </div>
+
+        <!-- ── QUESTION LIST (mini rows) ── -->
+        <div id="question-list" class="scroll-container">
+          <!-- JavaScript will populate this with question rows -->
+          <p style="color:var(--text-secondary);">Loading questions...</p>
+        </div>
+
+        <!-- ── PAGINATION ── -->
+        <div class="pagination">
+          <button id="prev-page" onclick="changePage(-1)">&#x25C0; Previous</button>
+          <!--
+            &#x25C0; = ◀ (left triangle)
+            onclick="changePage(-1)" → go to PREVIOUS page
+          -->
+          <span id="page-info">Page 1 of 1</span>
+          <button id="next-page" onclick="changePage(1)">Next &#x25B6;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── QUIZ VIEW ── -->
+    <div id="quiz-view" class="hidden">
+      <div class="card">
+        <h2>&#x270F;&#xFE0F; Quiz Mode</h2>
+
+        <!-- ── Quiz setup screen (shown before quiz starts) ── -->
+        <div id="quiz-setup">
+          <p style="color:var(--text-secondary); margin-bottom:var(--space-md);">
+            Choose how many questions you want, then start the quiz.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);justify-content:center;margin-bottom:var(--space-md);">
+            <label style="display:flex;align-items:center;gap:var(--space-xs);cursor:pointer;padding:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);">
+              <input type="radio" name="quiz-count" value="10" onchange="quizQuestionCount=10"> 10
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-xs);cursor:pointer;padding:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);">
+              <input type="radio" name="quiz-count" value="15" onchange="quizQuestionCount=15"> 15
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-xs);cursor:pointer;padding:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);">
+              <input type="radio" name="quiz-count" value="20" onchange="quizQuestionCount=20"> 20
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-xs);cursor:pointer;padding:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);">
+              <input type="radio" name="quiz-count" value="25" onchange="quizQuestionCount=25"> 25
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-xs);cursor:pointer;padding:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);">
+              <input type="radio" name="quiz-count" value="30" checked onchange="quizQuestionCount=30"> 30
+            </label>
+          </div>
+          <button class="btn btn-success" onclick="startQuiz()" style="padding:var(--space-md) var(--space-xl);font-size:var(--font-size-lg);">
+            &#x270F;&#xFE0F; Start Quiz
+          </button>
+        </div>
+
+        <!-- ── Quiz active screen (shown during quiz) ── -->
+
+        <!-- Timer display -->
+        <div id="quiz-timer" style="display:none">00:00</div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar" id="quiz-progress-bar" style="display:none">
+          <div id="quiz-progress" class="progress-bar-fill" style="width:0%"></div>
+        </div>
+
+        <!-- Question number indicator -->
+        <p id="quiz-q-num" style="display:none;text-align:center;color:var(--text-secondary);margin-bottom:var(--space-sm);"></p>
+
+        <!-- The actual question + options appear here -->
+        <div id="quiz-question-area">
+          <!-- JS inserts question content here -->
+        </div>
+
+        <!-- Quiz nav controls -->
+        <div style="display:none;gap:var(--space-sm);justify-content:center;margin-top:var(--space-md);flex-wrap:wrap;" id="quiz-nav-controls">
+          <span style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary);font-size:var(--font-size-sm);" id="quiz-nav-pos"></span>
+          <button id="quiz-prev-btn" class="btn" onclick="prevQuizQuestion()" disabled>&#x25C0; Prev</button>
+          <button id="quiz-next-btn" class="btn btn-primary" onclick="nextQuizQuestion()">Next &#x25B6;</button>
+          <button id="quiz-flag-btn" class="btn btn-sm" onclick="toggleQuizFlag()" title="Flag for review">&#x1F6A9; Flag</button>
+          <button class="btn btn-danger btn-sm" onclick="endQuizEarly()">&#x274C; End Quiz</button>
+        </div>
+
+        <!-- Quiz end review area -->
+        <div id="quiz-review-area" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- ── QUESTION DETAIL VIEW ── -->
+    <div id="question-view" class="hidden">
+      <div class="card">
+        <!-- Navigation buttons row -->
+        <div style="display:flex;gap:var(--space-sm);margin-bottom:var(--space-sm);flex-wrap:wrap;">
+          <button class="btn btn-sm" onclick="showStudyMode()">
+            &#x25C0; Back
+          </button>
+          <button class="btn btn-sm" id="prev-q-btn" onclick="navigateQuestion(-1)" disabled>
+            &#x25C0; Prev
+          </button>
+          <span id="q-nav-pos" style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary);font-size:var(--font-size-sm);"></span>
+          <button class="btn btn-sm" id="next-q-btn" onclick="navigateQuestion(1)">
+            Next &#x25B6;
+          </button>
+        </div>
+
+        <!-- This area holds the full question detail -->
+        <div id="question-detail">
+          <!-- JS inserts question detail here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BOOKMARKS VIEW ── -->
+    <div id="bookmarks-view" class="hidden">
+      <div class="card">
+        <h2>&#x1F516; Bookmarks</h2>
+        <p style="color:var(--text-secondary); margin-bottom:var(--space-sm);">
+          Questions you've bookmarked for review.
+        </p>
+        <div id="bookmark-list" class="scroll-container">
+          <p style="color:var(--text-secondary);">Loading bookmarks...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STATS VIEW ── -->
+    <div id="stats-view" class="hidden">
+      <div class="card">
+        <h2>&#x1F4CA; Your Statistics</h2>
+        <div id="stats-content">
+          <!-- JS populates this with stats data -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================================================
+    ╔══════════════════════════════════════════════════════════════╗
+    ║              ALL JAVASCRIPT CODE STARTS HERE                ║
+    ╚══════════════════════════════════════════════════════════════╝
+
+    JavaScript (JS) makes the page INTERACTIVE.
+    It handles:
+    - Loading the SQLite database
+    - Running SQL queries to get questions
+    - Showing/hiding views (study, quiz, etc.)
+    - Managing quiz timer and scoring
+    - Saving bookmarks and notes (localStorage)
+    - Dark mode toggling
+
+    Learn JS: https://www.w3schools.com/js/default.asp
+
+    ── IMPORTANT JS CONCEPTS ──
+
+    VARIABLES - containers for data
+      let x = 5;           // can change later
+      const y = "hello";   // CANNOT change (constant)
+      var z = "old way";   // DON'T USE (old, confusing rules)
+
+    FUNCTIONS - reusable blocks of code
+      function myFunction(param1, param2) {
+        // code here
+        return something;
+      }
+
+    ASYNC/AWAIT - for operations that take time (like loading a file)
+      async function loadData() {
+        // fetch() works with http:// but NOT with file:// (local HTML file)
+        let result = await fetch("file.txt");
+
+        // For local files, use XMLHttpRequest wrapped in a Promise:
+        let localResult = await new Promise((resolve, reject) => {
+          let xhr = new XMLHttpRequest();
+          xhr.open("GET", "file.txt", true);
+          xhr.responseType = "arraybuffer";
+          xhr.onload = () => { resolve(xhr.response); };
+          xhr.onerror = () => { reject(new Error("Failed")); };
+          xhr.send();
+        });
+      }
+
+    DOCUMENT OBJECT MODEL (DOM)
+      document.getElementById("xyz") - find element by ID
+      element.textContent = "text" - change text
+      element.classList.add("hidden") - add CSS class
+      element.addEventListener("click", fn) - listen for clicks
+
+    Learn DOM: https://www.w3schools.com/js/js_htmldom.asp
+    ============================================================ -->
+
+  <!-- ============================================================
+    Load sql.js from CDN (Content Delivery Network).
+
+    <script src="URL"> tells the browser to fetch and run this JS file.
+    The browser DOWNLOADS sql.js from the internet (it's cached after first use).
+
+    sql.js is a JavaScript library that RUNS SQLite IN THE BROWSER.
+    It compiles SQLite (C code) to WebAssembly (WASM) so it works
+    in any modern browser WITHOUT a server. This is AMAZING -
+    we get a full SQL database running locally in the user's browser!
+
+    sql.js GitHub: https://github.com/sql-js/sql.js
+    Learn <script> tag: https://www.w3schools.com/tags/tag_script.asp
+    ============================================================ -->
+  <script src="sql-wasm.js"></script>
+
+  <!-- ============================================================
+    OUR MAIN JAVASCRIPT
+
+    This second <script> block contains ALL our application logic.
+    It runs AFTER sql.js is loaded (because it appears after in the HTML).
+
+    We use defer-like behavior by putting scripts at end of <body>.
+    This ensures the HTML is fully PARSED before JS tries to find elements.
+
+    Learn script placement: https://www.w3schools.com/js/js_whereto.asp
+    ============================================================ -->
+  <script>
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 1: APPLICATION STATE (Global Variables)           ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // These variables hold the "state" of our app - all the data that
+    // changes as the user interacts.
+    //
+    // GLOBAL variables (declared outside any function) are accessible
+    // from EVERY function in the script.
+    //
+    // Learn JS variables: https://www.w3schools.com/js/js_variables.asp
+    // ==============================================================
+
+    // ─── Database ───
+
+    /** @type {SQL.js.Database|null}
+     *  This will hold the loaded SQLite database object.
+     *  null means "not loaded yet".
+     *  We use 'let' because the value changes (from null to the DB object).
+     *  The JSDoc comment (slash-star-star ... star-slash) helps IDEs
+     *  understand what type of data this variable holds. It's optional. */
+    let db = null;
+
+    /** @type {Array} - Holds ALL questions (cached after loading).
+     *  This is an ARRAY - a list of items in square brackets:
+     *  let arr = [item1, item2, item3];
+     *  Learn arrays: https://www.w3schools.com/js/js_arrays.asp */
+    let allQuestions = [];
+
+    // ─── Study Mode State ───
+
+    /** Current page number in study mode (1-indexed). */
+    let currentPage = 1;
+
+    /** How many questions to show per page in study mode. */
+    let pageSize = 20;
+
+    /** Total number of pages after filtering. */
+    let totalPages = 1;
+
+    /** All filtered questions (subset of allQuestions based on search/filter). */
+    let filteredQuestions = [];
+
+    /** Current index within the active question list for the detail view navigation. */
+    let currentQuestionIndex = 0;
+
+    /** The currently active list for detail view navigation (filteredQuestions or bookmarkedQuestions). */
+    let currentQuestionList = filteredQuestions;
+
+    // ─── Quiz Mode State ───
+
+    /** Array of question IDs selected for the current quiz (random 30). */
+    let quizQuestions = [];
+
+    /** Index (0-based) of the current quiz question we're on. */
+    let quizIndex = 0;
+
+    /** Array of user's answers for each quiz question ['A', 'B', 'C', ...]. */
+    let quizAnswers = [];
+
+    /** Array of whether each answer is correct [true, false, true, ...]. */
+    let quizCorrect = [];
+
+    /** Timer interval ID (used to clear/stop the timer). */
+    let quizTimer = null;
+
+    /** Remaining seconds in the quiz (set dynamically in startQuiz). */
+    let quizTimeLeft = 0;
+
+    /** Whether the quiz has ended (prevents double-submission). */
+    let quizEnded = false;
+
+    /** User-selected number of questions for this quiz (10, 15, 20, 25, or 30). */
+    let quizQuestionCount = 30;
+
+    /** Array of flagged/starred quiz question indices [0, 3, 7, ...]. */
+    let quizFlagged = [];
+
+    /** Set to true when reviewing completed quiz results. */
+    let quizReviewMode = false;
+
+    // ─── Language ───
+
+    /** Currently selected language: 'es', 'en', or 'both'. */
+    let currentLang = 'en';
+
+    // ─── localStorage keys ───
+    //
+    // localStorage is like a tiny database built into the browser.
+    // Data stays even after the user closes the page and comes back.
+    // It stores STRING key-value pairs.
+    //
+    // Learn localStorage: https://www.w3schools.com/jsref/prop_web_storage_localstorage_setitem.asp
+
+    /** Key prefix for bookmark data in localStorage. */
+    const BK_KEY = 'dlesp_bookmarks';
+
+    /** Key prefix for notes data in localStorage. */
+    const NT_KEY = 'dlesp_notes';
+
+    /** Key for dark mode preference. */
+    const DM_KEY = 'dlesp_darkmode';
+
+    /** Key for quiz history data. */
+    const QH_KEY = 'dlesp_quiz_history';
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 2: DATABASE LOADING                               ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // This section handles loading the SQLite .sqlite file and
+    // initializing the database engine. This is ASYNCHRONOUS -
+    // meaning it starts the operation and continues running other
+    // code while waiting for the file to download.
+    //
+    // Learn async/await: https://www.w3schools.com/js/js_async.asp
+    // ==============================================================
+
+    /**
+     * initSQL() - Initialize the sql.js library.
+     *
+     * The 'async' keyword means this function returns a Promise
+     * and uses 'await' inside. We WAIT for sql.js to initialize
+     * before proceeding.
+     *
+     * Learn Promises: https://www.w3schools.com/js/js_promise.asp
+     */
+    async function initSQL() {
+      // Update loading status so the user knows what's happening
+      document.getElementById('loading-status').textContent = 'Loading SQL engine...';
+
+      try {
+        // ─── Load sql.js wasm binary ───
+        //
+        // SQLite is written in C. To run it in the browser, it's compiled
+        // to WebAssembly (.wasm). The initSqlJs() function downloads and
+        // initializes the WASM binary from a CDN URL.
+        //
+        // 'await' PAUSES this function until initSqlJs() finishes.
+        // The code after this line will NOT run until sql.js is ready.
+        //
+        // The second argument { locateFile: ... } tells sql.js where
+        // to find the .wasm file. Without this, it wouldn't know where
+        // to download the WebAssembly binary.
+        const SQL = await initSqlJs({
+          locateFile: file => `sql-wasm.wasm`
+        });
+
+        document.getElementById('loading-status').textContent = 'Downloading database file...';
+        document.getElementById('loading-bar').value = 30;  // 30% progress
+
+        // ─── Load the SQLite database file ───
+        //
+        // We use XMLHttpRequest instead of fetch() because XMLHttpRequest
+        // supports file:// protocol (opening the HTML directly from disk).
+        // fetch() only works with http:// and https:// URLs.
+        //
+        // XMLHttpRequest is the OLDER way to make HTTP requests in JavaScript.
+        // It's more verbose but more compatible with local files.
+        //
+        // Learn XMLHttpRequest: https://www.w3schools.com/xml/xml_http.asp
+        //
+        // We wrap the XHR in a Promise so we can use async/await syntax.
+        // A Promise is an object that represents a future value.
+        // resolve() is called on success, reject() on failure.
+        // Learn Promises: https://www.w3schools.com/js/js_promise.asp
+        const buffer = await new Promise((resolve, reject) => {
+          // Create a new XMLHttpRequest object
+          const xhr = new XMLHttpRequest();
+
+          // open(method, url) - prepare the request
+          // 'GET' = we want to DOWNLOAD a file
+          // The URL is relative to the HTML file location
+          xhr.open('GET', 'database/questions.sqlite', true);
+          // The 3rd argument 'true' means ASYNCHRONOUS (non-blocking)
+
+          // responseType = 'arraybuffer' tells XHR to return raw binary data
+          // ArrayBuffer is a container for binary data (bytes)
+          // Without this, XHR returns text (which would corrupt the .sqlite file)
+          xhr.responseType = 'arraybuffer';
+
+          // xhr.onload fires when the request COMPLETES successfully
+          xhr.onload = function () {
+            // xhr.status is the HTTP status code
+            // For file:// protocol, status is 0 (success) or 200 (success for http://)
+            if (xhr.status === 0 || xhr.status === 200) {
+              // xhr.response is an ArrayBuffer containing the file bytes
+              resolve(xhr.response);
+            } else {
+              // HTTP error: 404 (file not found), 500 (server error), etc.
+              reject(new Error(`Failed to load database: HTTP ${xhr.status}`));
+            }
+          };
+
+          // xhr.onerror fires when the request FAILS (network error, file not found)
+          xhr.onerror = function () {
+            reject(new Error('Failed to load database file. If opening from disk, make sure database/questions.sqlite exists next to this HTML file. Try: cd database && python -m http.server 8080'));
+          };
+
+          // xhr.send() actually STARTS the request
+          // For GET requests, send() takes no body/payload
+          xhr.send();
+        });
+
+        document.getElementById('loading-status').textContent = 'Parsing database...';
+        document.getElementById('loading-bar').value = 60;  // 60% progress
+
+        // ─── Open the SQLite database ───
+        //
+        // new SQL.Database(new Uint8Array(buffer)) creates a database
+        // FROM the binary data we downloaded.
+        //
+        // Uint8Array is a typed array of 8-bit unsigned integers.
+        // It wraps the ArrayBuffer so sql.js can read it byte by byte.
+        //
+        // Learn typed arrays: https://www.w3schools.com/jsref/jsref_uint8array.asp
+        db = new SQL.Database(new Uint8Array(buffer));
+
+        document.getElementById('loading-status').textContent = 'Database loaded successfully!';
+        document.getElementById('loading-bar').value = 100;  // 100% complete!
+
+        // ─── Verify database has data ───
+        //
+        // db.exec() runs a raw SQL query and returns the result.
+        // We count the questions to make sure the DB is valid.
+        const countResult = db.exec("SELECT COUNT(*) AS cnt FROM questions");
+        // db.exec returns an array of result objects.
+        // countResult[0].values[0][0] = first row, first column = the count
+        const count = countResult[0].values[0][0];
+        console.log(`Database loaded with ${count} questions`);  // Console log (developer only)
+        document.getElementById('question-count').textContent = count.toLocaleString();
+
+        // ─── Load all questions into memory ───
+        //
+        // We load ALL questions once into an array for fast access.
+        // This is a CACHING strategy - load once, use many times.
+        await loadAllQuestions();
+
+        // ─── Populate source filter dropdown ───
+        // Get distinct source names from the database
+        const sourcesResult = db.exec("SELECT DISTINCT s.name FROM questions q JOIN sources s ON q.source_id = s.source_id ORDER BY s.name");
+        const sourceSelect = document.getElementById('filter-source');
+
+        // sourcesResult[0].values is an array of rows, each row is [name]
+        // Learn for...of loops: https://www.w3schools.com/js/js_loop_forof.asp
+        for (const row of sourcesResult[0].values) {
+          const option = document.createElement('option');
+          // <option value="name">Name</option>
+          option.value = row[0];    // The source name
+          option.textContent = row[0];  // What user sees
+          sourceSelect.appendChild(option);  // Add to dropdown
+        }
+
+        // ─── Show study mode ───
+        // Wait a moment so the user sees "100% loaded", then show content
+        setTimeout(() => {
+          document.getElementById('loading-screen').classList.add('hidden');
+          showHome();
+        }, 500);
+        // setTimeout(fn, delay_ms) - runs 'fn' after 'delay' milliseconds
+
+      } catch (error) {
+        // ─── Error handling ───
+        // If ANYTHING in the 'try' block fails, the 'catch' block runs.
+        // error.message contains a description of what went wrong.
+        //
+        // Learn try/catch: https://www.w3schools.com/js/js_errors.asp
+        document.getElementById('loading-status').textContent = 'Error: ' + error.message;
+        document.getElementById('loading-status').style.color = 'var(--danger)';
+        console.error('Database init error:', error);
+      }
+    }
+
+    /**
+     * loadAllQuestions() - Fetch ALL questions from SQLite into JavaScript array.
+     *
+     * We do a JOIN to get data from multiple tables in ONE query.
+     * This is the power of relational databases!
+     *
+     * Learn SQL JOINs: https://www.w3schools.com/sql/sql_join.asp
+     */
+    async function loadAllQuestions() {
+      document.getElementById('loading-status').textContent = 'Loading questions...';
+
+      // ─── SQL QUERY ───
+      //
+      // This SELECT statement fetches question data from 3 tables:
+      //   questions   - main question record
+      //   question_texts - multi-language text
+      //   sources     - source name
+      //
+      // The WHERE clause filters to only the CURRENT language.
+      // We use ? as a placeholder for the language value (prevents SQL injection).
+      //
+      // Learn SQL SELECT: https://www.w3schools.com/sql/sql_select.asp
+      const result = db.exec(`
+        SELECT q.question_id,
+               q.source_question_id,
+               q.correct_answer,
+               q.original_language,
+               q.translation_source,
+               s.name AS source_name,
+               qt_es.question_text  AS q_es,
+               qt_es.option_a  AS a_es,
+               qt_es.option_b  AS b_es,
+               qt_es.option_c  AS c_es,
+               qt_es.explanation  AS e_es,
+               qt_en.question_text  AS q_en,
+               qt_en.option_a  AS a_en,
+               qt_en.option_b  AS b_en,
+               qt_en.option_c  AS c_en,
+               qt_en.explanation  AS e_en,
+               qt_gu.question_text  AS q_gu,
+               qt_gu.option_a  AS a_gu,
+               qt_gu.option_b  AS b_gu,
+               qt_gu.option_c  AS c_gu,
+               img.local_filename AS image_local,
+               img.original_url AS image_url,
+               img.is_dead AS image_dead       -- 1 = broken/404, 0 = working
+        FROM questions q
+        JOIN sources s ON q.source_id = s.source_id
+        LEFT JOIN question_texts qt_es ON q.question_id = qt_es.question_id AND qt_es.language = 'es'
+        LEFT JOIN question_texts qt_en ON q.question_id = qt_en.question_id AND qt_en.language = 'en'
+        LEFT JOIN question_texts qt_gu ON q.question_id = qt_gu.question_id AND qt_gu.language = 'gu'
+        LEFT JOIN images img ON q.image_id = img.image_id
+        ORDER BY q.question_id
+      `);
+
+      // ─── Parse the result ───
+      //
+      // db.exec() returns: { columns: [...], values: [[row1], [row2], ...] }
+      // columns - array of column names
+      // values  - array of rows, each row is an array of values
+      //
+      // We convert each row into an OBJECT with named properties.
+      // This makes the code more readable than using numbers like row[0], row[1].
+
+      /** @type {Array} */
+      allQuestions = [];
+
+      // Get column names to map values by name
+      const cols = result[0].columns;
+
+      // Loop through each row
+      for (const row of result[0].values) {
+        // Create an object: { question_id: row[0], source_question_id: row[1], ... }
+        /** @type {Object} */
+        const q = {};
+
+        // Map each column name to its value
+        // cols[i] = column name, row[i] = corresponding value
+        for (let i = 0; i < cols.length; i++) {
+          q[cols[i]] = row[i];
+        }
+
+        // Add the question object to our array
+        allQuestions.push(q);
+      }
+
+      console.log(`Loaded ${allQuestions.length} questions`);
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 3: VIEW SWITCHING                                ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // These functions hide all views and show only the requested one.
+    // Our views are <div> elements with ids like 'study-view', 'quiz-view', etc.
+    // They are hidden by adding class="hidden" and shown by removing it.
+    //
+    // Learn DOM manipulation: https://www.w3schools.com/js/js_htmldom.asp
+    // ==============================================================
+
+    /**
+     * showView(viewId) - Hide all views, then show only the one with the given ID.
+     *
+     * @param {string} viewId - The id of the view to show (e.g., 'study-view')
+     *
+     * This function is GENERIC - it works for ANY view.
+     * We pass the view ID as an argument, and it shows that view.
+     * This is better than writing separate showX() functions for each view.
+     */
+    function showView(viewId) {
+      // ─── Get all view elements ───
+      // An ARRAY of view IDs to manage
+      const views = ['home-view', 'study-view', 'quiz-view', 'question-view', 'bookmarks-view', 'stats-view'];
+
+      // Loop through each view ID
+      for (const id of views) {
+        // document.getElementById(id) - finds the HTML element with this id
+        const el = document.getElementById(id);
+
+        if (el) {
+          if (id === viewId) {
+            // THIS is the view we want to show - remove the 'hidden' class
+            // classList is an object that manages CSS classes on an element
+            // .remove('hidden') - removes the 'hidden' class (making it visible)
+            // Learn classList: https://www.w3schools.com/jsref/prop_element_classlist.asp
+            el.classList.remove('hidden');
+          } else {
+            // Other views should be hidden
+            el.classList.add('hidden');
+          }
+        }
+      }
+    }
+
+    /**
+     * showHome() - Switch to the home/landing page.
+     * Shows the main menu with big buttons for Study, Quiz, etc.
+     * This is the first thing users see after the database loads.
+     */
+    function showHome() {
+      showView('home-view');
+    }
+
+    /**
+     * showStudyMode() - Switch to study mode (browsing questions).
+     */
+    function showStudyMode() {
+      showView('study-view');
+
+      // Re-apply any active filters when coming back to study mode
+      applyFilters();
+    }
+
+    /**
+     * showBookmarks() - Switch to bookmarks view.
+     */
+    function showBookmarks() {
+      showView('bookmarks-view');
+      renderBookmarks();
+    }
+
+    /**
+     * showStats() - Switch to statistics view.
+     */
+    function showStats() {
+      showView('stats-view');
+      renderStats();
+    }
+
+    /**
+     * showQuestionDetail(index, list) - Show the full detail view for a question at given index.
+     *
+     * @param {number} index - Index in the provided list
+     * @param {Array} list - The list to navigate (filteredQuestions or bookmarkedQuestions)
+     */
+    function showQuestionDetail(index, list = filteredQuestions) {
+      currentQuestionIndex = index;
+      currentQuestionList = list;
+      const q = list[index];
+      if (!q) return;
+      showView('question-view');
+
+      // Call renderQuestionDetail to fill in the HTML with question data
+      renderQuestionDetail(q, 'question-detail');
+
+      // Update navigation buttons
+      document.getElementById('prev-q-btn').disabled = (index <= 0);
+      document.getElementById('next-q-btn').disabled = (index >= list.length - 1);
+      document.getElementById('q-nav-pos').textContent = `${index + 1} of ${list.length}`;
+    }
+
+    /**
+     * navigateQuestion(delta) - Go to next (+1) or previous (-1) question in detail view.
+     *
+     * @param {number} delta - +1 for next, -1 for previous
+     */
+    function navigateQuestion(delta) {
+      const newIndex = currentQuestionIndex + delta;
+      if (newIndex >= 0 && newIndex < currentQuestionList.length) {
+        showQuestionDetail(newIndex, currentQuestionList);
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 4: STUDY MODE                                     ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Study mode lets the user browse all questions with:
+    // - Search by keyword
+    // - Filter by source
+    // - Pagination
+    // ==============================================================
+
+    /**
+     * applyFilters() - Filter questions by source and search text,
+     * then display the first page of results.
+     */
+    function applyFilters() {
+      // ─── Get filter values from the HTML elements ───
+      //
+      // document.getElementById('filter-source').value
+      //   → reads what option is currently selected in the dropdown
+      //
+      // document.getElementById('filter-search').value.toLowerCase()
+      //   → reads the text typed in the search box
+      //   → .toLowerCase() makes it lowercase for case-INSENSITIVE search
+      const sourceFilter = document.getElementById('filter-source').value;
+      const searchText = document.getElementById('filter-search').value.toLowerCase().trim();
+
+      // ─── Filter the allQuestions array ───
+      //
+      // .filter() is an ARRAY METHOD that creates a NEW array
+      // containing only elements that pass a test.
+      //
+      // The test is a CALLBACK FUNCTION - a function passed as an argument
+      // that runs for each element. If it returns true, the element is kept.
+      //
+      // Learn array filter: https://www.w3schools.com/jsref/jsref_filter.asp
+      filteredQuestions = allQuestions.filter(q => {
+        // Filter by SOURCE
+        if (sourceFilter !== 'all' && q.source_name !== sourceFilter) {
+          return false;  // Skip this question (not matching source)
+        }
+
+        // Filter by SEARCH TEXT (if any)
+        if (searchText !== '') {
+          // Search in BOTH Spanish and English question text
+          // .includes() returns true if one string contains another
+          const inSpanish = q.q_es && q.q_es.toLowerCase().includes(searchText);
+          const inEnglish = q.q_en && q.q_en.toLowerCase().includes(searchText);
+
+          // If search text not found in either language, skip
+          if (!inSpanish && !inEnglish) {
+            return false;
+          }
+        }
+
+        // If we get here, the question passed ALL filters
+        return true;
+      });
+
+      // ─── Reset to page 1 whenever filters change ───
+      currentPage = 1;
+
+      // ─── Calculate total pages ───
+      // Math.ceil() rounds UP to next integer
+      // If 55 filtered questions and pageSize=20, then 55/20 = 2.75 → ceil = 3 pages
+      totalPages = Math.ceil(filteredQuestions.length / pageSize) || 1;
+      // The || 1 handles the case where filteredQuestions.length is 0 (0/20 = 0, but we want at least 1)
+
+      // ─── Render the current page ───
+      renderStudyPage();
+    }
+
+    /**
+     * renderStudyPage() - Display the current page of filtered questions.
+     */
+    function renderStudyPage() {
+      // ─── Calculate start and end indices for slicing the array ───
+      //
+      // Page 1: items 0 to 19
+      // Page 2: items 20 to 39
+      // etc.
+      const start = (currentPage - 1) * pageSize;
+      const end = Math.min(start + pageSize, filteredQuestions.length);
+      // Math.min ensures we don't go past the end of the array
+
+      // ─── Get the slice (portion) of questions for this page ───
+      // .slice(start, end) returns a NEW array with elements from start to end-1
+      // Learn slice: https://www.w3schools.com/jsref/jsref_slice_array.asp
+      const pageQuestions = filteredQuestions.slice(start, end);
+
+      // ─── Build the HTML for the question list ───
+      const listEl = document.getElementById('question-list');
+
+      // If no questions match, show a message
+      if (pageQuestions.length === 0) {
+        listEl.innerHTML = '<p style="color:var(--text-secondary); padding:var(--space-md);text-align:center;">No questions found. Try different filters.</p>';
+      } else {
+        // Build HTML string for all question rows
+        // We use .map() to transform each question into an HTML string,
+        // then .join('') to combine them into one string.
+        //
+        // Learn map: https://www.w3schools.com/jsref/jsref_map.asp
+        // Learn template literals (`...`): https://www.w3schools.com/js/js_string_templates.asp
+        listEl.innerHTML = pageQuestions.map(q => {
+          // Get the question text in the current language
+          const qText = getQuestionText(q);
+
+          // Get the ACTUAL index of this question inside the filteredQuestions array
+          // so the detail view can navigate prev/next through the filter results.
+          const actualIndex = filteredQuestions.indexOf(q);
+          return `
+            <div class="q-row" onclick="showQuestionDetail(${actualIndex}, filteredQuestions)">
+              <span class="source-badge">${escapeHtml(q.source_name)}</span>
+              ${escapeHtml(truncateText(qText, 100))}
+            </div>
+          `;
+          // escapeHtml() - prevents XSS attacks (converts < > & etc to safe chars)
+          // truncateText() - limits text to N characters
+        }).join('');
+        // .join('') concatenates all array elements into ONE string
+      }
+
+      // ─── Update pagination controls ───
+      document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+
+      // Disable "Previous" button if we're on page 1
+      document.getElementById('prev-page').disabled = (currentPage <= 1);
+
+      // Disable "Next" button if we're on the last page
+      document.getElementById('next-page').disabled = (currentPage >= totalPages);
+    }
+
+    /**
+     * changePage(direction) - Go to the next or previous page.
+     *
+     * @param {number} direction - -1 for previous, +1 for next
+     */
+    function changePage(direction) {
+      // Calculate new page number
+      const newPage = currentPage + direction;
+
+      // Only change if the new page is within valid range (1 to totalPages)
+      if (newPage >= 1 && newPage <= totalPages) {
+        currentPage = newPage;
+        renderStudyPage();
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 5: QUESTION RENDERING (Single Question Display)   ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // These functions display a single question with its options,
+    // language toggling, bookmarking, and notes.
+    // ==============================================================
+
+    /**
+     * renderQuestionDetail(q, containerId) - Display a full question in a container.
+     *
+     * @param {Object} q - The question object
+     * @param {string} containerId - The id of the HTML element to put content into
+     * @param {boolean} showFeedback - Whether to show correct/wrong feedback (for quiz)
+     * @param {string|null} selectedAnswer - The user's selected answer (A/B/C) or null
+     */
+    function renderQuestionDetail(q, containerId, showFeedback = false, selectedAnswer = null) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      // ─── Get text in current language ───
+      const questionText = getQuestionText(q);
+      const optA = getOptionText(q, 'A');
+      const optB = getOptionText(q, 'B');
+      const optC = getOptionText(q, 'C');
+
+      // ─── Check if bookmarked ───
+      const isBookmarked = getBookmarks().includes(q.question_id);
+
+      // ─── Get note if exists ───
+      const note = getNote(q.question_id);
+
+      // ─── Build the HTML ───
+      //
+      // We use template literals (backticks `) to embed variables
+      // directly into strings with ${variableName} syntax.
+      //
+      // Learn template literals: https://www.w3schools.com/js/js_string_templates.asp
+      // Show question text:
+      // - 'es' or 'en' or 'gu' mode: show single language
+      // - 'both' mode: ES on top, EN below (lighter)
+      // - 'all' mode: ES, EN, GU stacked
+      let questionHtml = '';
+      if (currentLang === 'both') {
+        questionHtml = `<span lang="es">${escapeHtml(q.q_es)}</span>`
+                     + `<br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span>`;
+      } else if (currentLang === 'all') {
+        questionHtml = `<span lang="es">${escapeHtml(q.q_es)}</span>`
+                     + `<br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span>`
+                     + `<br><span lang="gu" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_gu || '')}</span>`;
+      } else {
+        questionHtml = escapeHtml(questionText);
+      }
+
+      // Show options:
+      // 'both' mode: ES + EN per option; 'all' mode: ES + EN + GU per option
+      let optAHtml = escapeHtml(optA);
+      let optBHtml = escapeHtml(optB);
+      let optCHtml = escapeHtml(optC);
+      if (currentLang === 'both') {
+        optAHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span>`;
+        optBHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span>`;
+        optCHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span>`;
+      } else if (currentLang === 'all') {
+        optAHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_gu || '')}</span>`;
+        optBHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_gu || '')}</span>`;
+        optCHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_gu || '')}</span>`;
+      }
+
+      container.innerHTML = `
+        <!-- Question text -->
+        <div class="q-text">${questionHtml}</div>
+
+        <!-- Source and original language badges -->
+        <div style="margin-bottom:var(--space-sm);">
+          <span class="source-badge">${escapeHtml(q.source_name)}</span>
+          <span class="source-badge" style="background:var(--warning);">
+            ${q.original_language === 'en' ? 'Original EN' : 'Original ES'}
+          </span>
+          <span class="source-badge" style="background:var(--success);">
+            ${q.translation_source === 'original' ? 'Original text' : 'Machine translated'}
+          </span>
+        </div>
+
+        <!-- Image (if the question has one) -->
+        ${q.image_local ? `
+          <div style="text-align:center;margin:var(--space-md) 0;">
+            <img src="images/${escapeHtml(q.image_local)}"
+                 alt="Question image"
+                 style="max-width:100%;max-height:300px;border-radius:var(--radius-sm);border:1px solid var(--border);"
+                 onerror="this.onerror=null;this.parentElement.innerHTML='<div style=\\'padding:20px;color:var(--text-muted);border:1px dashed var(--border);border-radius:var(--radius-sm);\\'>Image unavailable</div>'"
+                 loading="lazy">
+          </div>
+        ` : ''}
+
+        <!-- Options (A/B/C) -->
+        <div class="q-options">
+          <label class="q-option ${getOptionClass('A', q.correct_answer, showFeedback, selectedAnswer)}">
+            <input type="radio" name="detail-answer" value="A"
+                   ${showFeedback ? 'disabled' : ''}
+                   onchange="handleDetailAnswer(${q.question_id}, 'A')">
+            <span class="option-text">A) ${optAHtml}</span>
+          </label>
+          <label class="q-option ${getOptionClass('B', q.correct_answer, showFeedback, selectedAnswer)}">
+            <input type="radio" name="detail-answer" value="B"
+                   ${showFeedback ? 'disabled' : ''}
+                   onchange="handleDetailAnswer(${q.question_id}, 'B')">
+            <span class="option-text">B) ${optBHtml}</span>
+          </label>
+          <label class="q-option ${getOptionClass('C', q.correct_answer, showFeedback, selectedAnswer)}">
+            <input type="radio" name="detail-answer" value="C"
+                   ${showFeedback ? 'disabled' : ''}
+                   onchange="handleDetailAnswer(${q.question_id}, 'C')">
+            <span class="option-text">C) ${optCHtml}</span>
+          </label>
+        </div>
+
+        <!-- Feedback area (shown after answering) -->
+        <div id="detail-feedback" class="q-feedback ${showFeedback ? (selectedAnswer === q.correct_answer ? 'correct' : 'wrong') : ''}" style="${showFeedback ? '' : 'display:none'}">
+          ${showFeedback ? (selectedAnswer === q.correct_answer ? '&#x2705; Correct!' : '&#x274C; Wrong! The correct answer is ' + q.correct_answer) : ''}
+        </div>
+
+        <!-- Explanation -->
+        ${getExplanationHtml(q, showFeedback)}
+
+        <!-- Bookmark button -->
+        <div style="margin-top:var(--space-md); display:flex; align-items:center; gap:var(--space-sm); flex-wrap:wrap;">
+          <button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}"
+                  onclick="toggleBookmark(${q.question_id})" title="Bookmark this question">
+            ${isBookmarked ? '&#x1F516;' : '&#x1F4CC;'}
+          </button>
+          <span style="color:var(--text-secondary); font-size:var(--font-size-sm);">
+            ${isBookmarked ? 'Bookmarked' : 'Click to bookmark'}
+          </span>
+        </div>
+
+        <!-- Deep Understanding Notes -->
+        <div style="margin-top:var(--space-md);">
+          <label style="font-weight:600; display:block; margin-bottom:var(--space-xs);">
+            &#x1F4DD; Deep Understanding (your personal notes)
+          </label>
+          <textarea class="notes-textarea" id="note-${q.question_id}"
+                    placeholder="Write your thoughts, mnemonics, or explanations here..."
+                    oninput="saveNote(${q.question_id}, this.value)">${escapeHtml(note)}</textarea>
+        </div>
+      `;
+    }
+
+    /**
+     * handleDetailAnswer(questionId, answer) - Process when user selects an answer in detail view.
+     *
+     * @param {number} questionId - The question ID
+     * @param {string} answer - The selected answer ('A', 'B', or 'C')
+     */
+    function handleDetailAnswer(questionId, answer) {
+      // Find the question in allQuestions array
+      // .find() returns the FIRST element where the callback returns true
+      // Learn find: https://www.w3schools.com/jsref/jsref_find.asp
+      const q = allQuestions.find(x => x.question_id === questionId);
+      if (!q) return;
+
+      // Re-render with feedback shown
+      renderQuestionDetail(q, 'question-detail', true, answer);
+
+      // ─── Update quiz history ───
+      // Save that the user answered this question (for stats tracking)
+      addToQuizHistory(questionId, answer, answer === q.correct_answer);
+    }
+
+    /**
+     * getOptionClass(option, correctAnswer, showFeedback, selectedAnswer) -
+     * Determine which CSS class to apply to an option (correct/wrong/neutral).
+     *
+     * @param {string} option - 'A', 'B', or 'C'
+     * @param {string} correctAnswer - The correct answer
+     * @param {boolean} showFeedback - Whether to show feedback
+     * @param {string|null} selectedAnswer - User's chosen answer
+     * @returns {string} CSS class name or empty string
+     */
+    function getOptionClass(option, correctAnswer, showFeedback, selectedAnswer) {
+      if (!showFeedback) return '';
+      if (option === correctAnswer) return 'correct';
+      if (option === selectedAnswer) return 'wrong';
+      return '';
+    }
+
+    /**
+     * getExplanationHtml(q, showFeedback) - Get the HTML for the explanation section.
+     *
+     * @param {Object} q - Question object
+     * @param {boolean} showFeedback - Whether to show explanation
+     * @returns {string} HTML string or empty string
+     */
+    function getExplanationHtml(q, showFeedback) {
+      if (!showFeedback) return '';
+
+      // Get explanation in current language (no GU explanations exist,
+      // so fall back to EN then ES for Gujarati mode)
+      let expText = '';
+      if (currentLang === 'gu' || currentLang === 'all') {
+        expText = q.e_en || q.e_es || '';
+      } else {
+        expText = currentLang === 'en' ? (q.e_en || '') : (q.e_es || '');
+      }
+
+      if (!expText.trim()) return '';  // Empty explanation → no HTML
+
+      return `<div class="q-explanation">&#x1F4D6; ${escapeHtml(expText)}</div>`;
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 6: LANGUAGE HELPERS                               ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // These functions return text in the currently selected language.
+    // ==============================================================
+
+    /**
+     * getQuestionText(q) - Get question text in the current language.
+     *
+     * @param {Object} q - Question object with q_es, q_en fields
+     * @returns {string} The question text in the selected language
+     */
+    /**
+     * getQuestionText(q) - Get question text in the current language.
+     * Returns PLAIN text (no HTML). For 'both' mode, concatenates ES|EN.
+     * For 'gu' mode, returns Gujarati text with fallback to EN then ES.
+     *
+     * @param {Object} q - Question object with q_es, q_en, q_gu fields
+     * @returns {string} The question text in the selected language
+     *
+     * Learn JS if/else: https://www.w3schools.com/js/js_if_else.asp
+     */
+    function getQuestionText(q) {
+      if (currentLang === 'en') return q.q_en || q.q_es;
+      if (currentLang === 'es') return q.q_es;
+      if (currentLang === 'gu') return q.q_gu || q.q_en || q.q_es;
+      if (currentLang === 'both') return q.q_es + '  |  ' + (q.q_en || '');
+      // 'all' mode: ES + EN + GU
+      return q.q_es + '  |  ' + (q.q_en || '') + '  |  ' + (q.q_gu || '');
+    }
+
+    /**
+     * getOptionText(q, optionLetter) - Get option text in the current language.
+     * Returns plain text only (no HTML). For 'gu' falls back to EN then ES.
+     * 'both' mode rendering is handled in the render functions.
+     *
+     * @param {Object} q - Question object
+     * @param {string} optionLetter - 'A', 'B', or 'C' (which option to get)
+     * @returns {string} The option text
+     *
+     * Learn JS objects: https://www.w3schools.com/js/js_objects.asp
+     */
+    function getOptionText(q, optionLetter) {
+      const fieldMap = {
+        'es': { A: 'a_es', B: 'b_es', C: 'c_es' },
+        'en': { A: 'a_en', B: 'b_en', C: 'c_en' },
+        'gu': { A: 'a_gu', B: 'b_gu', C: 'c_gu' }
+      };
+      if (currentLang === 'gu') {
+        return q[fieldMap['gu'][optionLetter]] || q[fieldMap['en'][optionLetter]] || q[fieldMap['es'][optionLetter]] || '';
+      }
+      // For 'both' and 'all' modes, primary display text is EN
+      const lang = (currentLang === 'both' || currentLang === 'all') ? 'en' : currentLang;
+      return q[fieldMap[lang][optionLetter]] || '';
+    }
+
+    /**
+     * changeLanguage(lang) - Update the current language and re-render open views.
+     *
+     * @param {string} lang - 'es', 'en', or 'both'
+     */
+    function changeLanguage(lang) {
+      currentLang = lang;
+      // Save preference
+      localStorage.setItem('dlesp_lang', lang);
+
+      // Re-render current view
+      if (!document.getElementById('study-view').classList.contains('hidden')) {
+        applyFilters();
+      } else if (!document.getElementById('quiz-view').classList.contains('hidden')) {
+        // If we're in an active quiz (not setup screen, not ended), re-render current question
+        if (quizQuestions.length > 0 && !quizEnded) {
+          showQuizQuestion(quizIndex);
+        }
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 7: QUIZ MODE                                      ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Quiz mode: 30 random questions with a 30-minute timer.
+    // ==============================================================
+
+    /**
+     * showQuizSetup() - Show the quiz setup screen with question count chooser.
+     */
+    function showQuizSetup() {
+      showView('quiz-view');
+
+      // Reset quiz state
+      quizQuestions = [];
+      quizEnded = false;
+      quizReviewMode = false;
+
+      // Show setup, hide active quiz elements
+      document.getElementById('quiz-setup').style.display = 'block';
+      document.getElementById('quiz-timer').style.display = 'none';
+      document.getElementById('quiz-progress-bar').style.display = 'none';
+      document.getElementById('quiz-q-num').style.display = 'none';
+      document.getElementById('quiz-nav-controls').style.display = 'none';
+      document.getElementById('quiz-review-area').style.display = 'none';
+
+      // Clear question area
+      document.getElementById('quiz-question-area').innerHTML = '';
+    }
+
+    /**
+     * startQuiz() - Begin a new quiz session with selected question count.
+     *
+     * Uses quizQuestionCount (set by radio buttons) to pick that many random questions.
+     */
+    function startQuiz() {
+      showView('quiz-view');
+
+      // ─── Reset quiz state ───
+      quizEnded = false;
+      quizReviewMode = false;
+      quizTimeLeft = quizQuestionCount * 60;  // 1 minute per question
+      quizIndex = 0;
+      quizAnswers = [];
+      quizCorrect = [];
+      quizFlagged = [];
+
+      // ─── Hide setup, show active quiz elements ───
+      document.getElementById('quiz-setup').style.display = 'none';
+      document.getElementById('quiz-timer').style.display = 'block';
+      updateTimerDisplay();  // Ensure timer shows correct initial time
+      document.getElementById('quiz-progress-bar').style.display = 'block';
+      document.getElementById('quiz-q-num').style.display = 'block';
+      document.getElementById('quiz-nav-controls').style.display = 'flex';
+      document.getElementById('quiz-review-area').style.display = 'none';
+
+      // ─── Select quizQuestionCount random questions ───
+      //
+      // Fisher-Yates shuffle algorithm (efficient random shuffle):
+      // We copy allQuestions, then randomly swap elements.
+      // Then we take the first quizQuestionCount.
+      //
+      // Learn Fisher-Yates: https://www.w3schools.com/js/js_array_sort.asp#random
+      const shuffled = [...allQuestions];  // Spread operator (...) copies the array
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        // Pick a random index from 0 to i
+        const j = Math.floor(Math.random() * (i + 1));
+        // Swap elements at positions i and j
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      // Take only quizQuestionCount questions (or less if fewer exist)
+      const count = Math.min(quizQuestionCount, shuffled.length);
+      quizQuestions = shuffled.slice(0, count);
+
+      // ─── Start timer ───
+      // setInterval() calls a function EVERY 1000ms (1 second)
+      // It returns a timer ID that we store so we can stop it later
+      quizTimer = setInterval(() => {
+        quizTimeLeft--;
+        updateTimerDisplay();
+
+        // Time's up - auto-end quiz
+        if (quizTimeLeft <= 0) {
+          endQuiz();
+        }
+      }, 1000);
+
+      // ─── Show first question ───
+      showQuizQuestion(0);
+    }
+
+    /**
+     * showQuizQuestion(index) - Display the quiz question at the given index.
+     *
+     * If quizReviewMode is true, shows feedback and correct/wrong labels.
+     * Otherwise shows unanswered options for the user to pick.
+     *
+     * @param {number} index - Index in quizQuestions array (0-based)
+     */
+    function showQuizQuestion(index) {
+      quizIndex = index;
+      const q = quizQuestions[index];
+      if (!q) {
+        endQuiz();
+        return;
+      }
+
+      // ─── Update progress ───
+      document.getElementById('quiz-q-num').textContent = `Question ${index + 1} of ${quizQuestions.length}`;
+      const progressPct = ((index + 1) / quizQuestions.length) * 100;
+      document.getElementById('quiz-progress').style.width = `${progressPct}%`;
+
+      // ─── Update nav position ───
+      document.getElementById('quiz-nav-pos').textContent = `${index + 1} / ${quizQuestions.length}`;
+
+      // ─── Update prev/next buttons ───
+      document.getElementById('quiz-prev-btn').disabled = (index <= 0);
+      document.getElementById('quiz-next-btn').disabled = (index >= quizQuestions.length - 1);
+
+      // ─── Update flag button ───
+      const isFlagged = quizFlagged.includes(index);
+      const flagBtn = document.getElementById('quiz-flag-btn');
+      flagBtn.innerHTML = isFlagged ? '&#x1F6A9; Flagged' : '&#x1F6A9; Flag';
+      flagBtn.style.background = isFlagged ? 'var(--warning)' : '';
+      flagBtn.style.color = isFlagged ? '#000' : '';
+
+      // ─── Render question ───
+      const area = document.getElementById('quiz-question-area');
+
+      const questionText = getQuestionText(q);
+      const optA = getOptionText(q, 'A');
+      const optB = getOptionText(q, 'B');
+      const optC = getOptionText(q, 'C');
+
+      // Build question HTML based on language mode
+      let qHtml, aHtml, bHtml, cHtml;
+      if (currentLang === 'both') {
+        qHtml = `<span lang="es">${escapeHtml(q.q_es)}</span><br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span>`;
+        aHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span>`;
+        bHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span>`;
+        cHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span>`;
+      } else if (currentLang === 'all') {
+        qHtml = `<span lang="es">${escapeHtml(q.q_es)}</span><br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span><br><span lang="gu" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_gu || '')}</span>`;
+        aHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_gu || '')}</span>`;
+        bHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_gu || '')}</span>`;
+        cHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_gu || '')}</span>`;
+      } else {
+        qHtml = escapeHtml(questionText);
+        aHtml = escapeHtml(optA);
+        bHtml = escapeHtml(optB);
+        cHtml = escapeHtml(optC);
+      }
+
+      // Add image HTML if the question has an image file
+      const imgHtml = q.image_local
+        ? `<div style="text-align:center;margin:var(--space-md) 0;">
+             <img src="images/${escapeHtml(q.image_local)}"
+                  alt="Question image"
+                  style="max-width:100%;max-height:300px;border-radius:var(--radius-sm);border:1px solid var(--border);"
+                  onerror="this.onerror=null;this.parentElement.innerHTML='<div style=\\'padding:20px;color:var(--text-muted);border:1px dashed var(--border);border-radius:var(--radius-sm);\\'>Image unavailable</div>'"
+                  loading="lazy">
+           </div>`
+        : '';
+
+      // ─── Check if this question was already answered ───
+      const alreadyAnswered = quizAnswers[index] !== undefined;
+
+      if (quizReviewMode) {
+        // ── REVIEW MODE: show correct/wrong labels after quiz ends ──
+        const userAnswer = quizAnswers[index] || '';
+        const isCorrect = quizCorrect[index] || false;
+        const reviewNote = getQuizNote(index);
+
+        area.innerHTML = `
+          <div class="q-text">${qHtml}</div>
+          ${imgHtml}
+          <div class="q-options" id="quiz-options">
+            <label class="q-option ${getOptionClass('A', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">A) ${aHtml}</span>
+            </label>
+            <label class="q-option ${getOptionClass('B', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">B) ${bHtml}</span>
+            </label>
+            <label class="q-option ${getOptionClass('C', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">C) ${cHtml}</span>
+            </label>
+          </div>
+          <div id="quiz-feedback" class="q-feedback ${isCorrect ? 'correct' : 'wrong'}" style="display:block;">
+            ${isCorrect
+              ? '&#x2705; Correct!'
+              : '&#x274C; Wrong! The correct answer is ' + q.correct_answer
+            }
+          </div>
+          <div style="margin-top:var(--space-sm);text-align:center;">
+            <textarea id="quiz-note-${index}" class="notes-textarea" style="width:100%;" placeholder="Write a note for future reference..."
+              onchange="saveQuizNote(${index}, this.value)">${escapeHtml(reviewNote)}</textarea>
+          </div>
+        `;
+      } else if (alreadyAnswered) {
+        // ── ALREADY ANSWERED: show feedback + allow navigate ──
+        const userAnswer = quizAnswers[index];
+        const isCorrect = quizCorrect[index];
+
+        area.innerHTML = `
+          <div class="q-text">${qHtml}</div>
+          ${imgHtml}
+          <div class="q-options" id="quiz-options">
+            <label class="q-option ${getOptionClass('A', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">A) ${aHtml}</span>
+            </label>
+            <label class="q-option ${getOptionClass('B', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">B) ${bHtml}</span>
+            </label>
+            <label class="q-option ${getOptionClass('C', q.correct_answer, true, userAnswer)}">
+              <span class="option-text">C) ${cHtml}</span>
+            </label>
+          </div>
+          <div id="quiz-feedback" class="q-feedback ${isCorrect ? 'correct' : 'wrong'}" style="display:block;">
+            ${isCorrect
+              ? '&#x2705; Correct!'
+              : '&#x274C; Wrong! The correct answer is ' + q.correct_answer
+            }
+          </div>
+        `;
+      } else {
+        // ── UNANSWERED: show clickable options ──
+        area.innerHTML = `
+          <div class="q-text">${qHtml}</div>
+          ${imgHtml}
+          <div class="q-options" id="quiz-options">
+            <label class="q-option" onclick="selectQuizAnswer('A')">
+              <span class="option-text">A) ${aHtml}</span>
+            </label>
+            <label class="q-option" onclick="selectQuizAnswer('B')">
+              <span class="option-text">B) ${bHtml}</span>
+            </label>
+            <label class="q-option" onclick="selectQuizAnswer('C')">
+              <span class="option-text">C) ${cHtml}</span>
+            </label>
+          </div>
+          <div id="quiz-feedback" class="q-feedback" style="display:none"></div>
+        `;
+      }
+
+      // ─── Update next button ───
+      const nextBtn = document.getElementById('quiz-next-btn');
+      if (quizReviewMode) {
+        if (index === quizQuestions.length - 1) {
+          nextBtn.innerHTML = '&#x25C0; Back to Review';
+          nextBtn.onclick = function() { showReviewSummary(); };
+        } else {
+          nextBtn.innerHTML = 'Next &#x25B6;';
+          nextBtn.onclick = function() { showQuizQuestion(index + 1); };
+        }
+        nextBtn.disabled = false;
+      } else if (index === quizQuestions.length - 1) {
+        nextBtn.innerHTML = '&#x1F3C1; Finish Quiz';
+        nextBtn.onclick = function() { endQuiz(); };
+      } else {
+        nextBtn.innerHTML = 'Next &#x25B6;';
+        nextBtn.onclick = function() { nextQuizQuestion(); };
+      }
+
+      // Enable next if the question was already answered
+      if (alreadyAnswered && !quizReviewMode) {
+        nextBtn.disabled = false;
+      }
+    }
+
+    /**
+     * selectQuizAnswer(answer) - Handle when user selects an answer during quiz.
+     *
+     * Stores the answer, shows feedback, then auto-advances to next question.
+     *
+     * @param {string} answer - 'A', 'B', or 'C'
+     */
+    function selectQuizAnswer(answer) {
+      const q = quizQuestions[quizIndex];
+      if (!q) return;
+
+      // Don't allow re-answering
+      if (quizAnswers[quizIndex] !== undefined) return;
+
+      // Store the answer
+      quizAnswers[quizIndex] = answer;
+      const isCorrect = (answer === q.correct_answer);
+      quizCorrect[quizIndex] = isCorrect;
+
+      // ─── Re-render with feedback ───
+      // This shows the correct/wrong highlights
+      const area = document.getElementById('quiz-question-area');
+
+      const questionText = getQuestionText(q);
+      const optA = getOptionText(q, 'A');
+      const optB = getOptionText(q, 'B');
+      const optC = getOptionText(q, 'C');
+
+      let qHtml, aHtml, bHtml, cHtml;
+      if (currentLang === 'both') {
+        qHtml = `<span lang="es">${escapeHtml(q.q_es)}</span><br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span>`;
+        aHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span>`;
+        bHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span>`;
+        cHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span>`;
+      } else if (currentLang === 'all') {
+        qHtml = `<span lang="es">${escapeHtml(q.q_es)}</span><br><span lang="en" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_en || '')}</span><br><span lang="gu" style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.q_gu || '')}</span>`;
+        aHtml = `${escapeHtml(q.a_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.a_gu || '')}</span>`;
+        bHtml = `${escapeHtml(q.b_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.b_gu || '')}</span>`;
+        cHtml = `${escapeHtml(q.c_es)}<br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_en || '')}</span><br><span style="color:var(--text-secondary);font-size:var(--font-size-sm);">${escapeHtml(q.c_gu || '')}</span>`;
+      } else {
+        qHtml = escapeHtml(questionText);
+        aHtml = escapeHtml(optA);
+        bHtml = escapeHtml(optB);
+        cHtml = escapeHtml(optC);
+      }
+
+      const imgHtml = q.image_local
+        ? `<div style="text-align:center;margin:var(--space-md) 0;"><img src="images/${escapeHtml(q.image_local)}" alt="Question image" style="max-width:100%;max-height:300px;border-radius:var(--radius-sm);border:1px solid var(--border);" onerror="this.onerror=null;this.parentElement.innerHTML='<div style=\\'padding:20px;color:var(--text-muted);border:1px dashed var(--border);border-radius:var(--radius-sm);\\'>Image unavailable</div>'" loading="lazy"></div>`
+        : '';
+
+      area.innerHTML = `
+        <div class="q-text">${qHtml}</div>
+        ${imgHtml}
+        <div class="q-options" id="quiz-options">
+          <label class="q-option ${getOptionClass('A', q.correct_answer, true, answer)}">
+            <span class="option-text">A) ${aHtml}</span>
+          </label>
+          <label class="q-option ${getOptionClass('B', q.correct_answer, true, answer)}">
+            <span class="option-text">B) ${bHtml}</span>
+          </label>
+          <label class="q-option ${getOptionClass('C', q.correct_answer, true, answer)}">
+            <span class="option-text">C) ${cHtml}</span>
+          </label>
+        </div>
+        <div id="quiz-feedback" class="q-feedback ${isCorrect ? 'correct' : 'wrong'}" style="display:block;">
+          ${isCorrect
+            ? '&#x2705; Correct!'
+            : '&#x274C; Wrong! The correct answer is ' + q.correct_answer
+          }
+        </div>
+      `;
+
+      // ─── Enable next button ───
+      document.getElementById('quiz-next-btn').disabled = false;
+
+      // ─── Auto-advance to next question after brief delay ───
+      if (quizIndex < quizQuestions.length - 1) {
+        setTimeout(() => {
+          nextQuizQuestion();
+        }, 400);
+      }
+    }
+
+    /**
+     * nextQuizQuestion() - Move to the next quiz question or finish.
+     */
+    function nextQuizQuestion() {
+      if (quizIndex < quizQuestions.length - 1) {
+        showQuizQuestion(quizIndex + 1);
+      } else {
+        endQuiz();
+      }
+    }
+
+    /**
+     * prevQuizQuestion() - Move to the previous quiz question.
+     */
+    function prevQuizQuestion() {
+      if (quizIndex > 0) {
+        showQuizQuestion(quizIndex - 1);
+      }
+    }
+
+    /**
+     * toggleQuizFlag() - Flag/unflag the current question for review before ending quiz.
+     *
+     * Flagged questions can be quickly revisited before submitting.
+     */
+    function toggleQuizFlag() {
+      const idx = quizIndex;
+      const pos = quizFlagged.indexOf(idx);
+      if (pos > -1) {
+        // Remove flag
+        quizFlagged.splice(pos, 1);
+      } else {
+        // Add flag
+        quizFlagged.push(idx);
+      }
+      // Re-render flag button
+      const isFlagged = quizFlagged.includes(idx);
+      const flagBtn = document.getElementById('quiz-flag-btn');
+      flagBtn.innerHTML = isFlagged ? '&#x1F6A9; Flagged' : '&#x1F6A9; Flag';
+      flagBtn.style.background = isFlagged ? 'var(--warning)' : '';
+      flagBtn.style.color = isFlagged ? '#000' : '';
+    }
+
+    /**
+     * getQuizNote(index) - Retrieve a saved note for a quiz question.
+     *
+     * @param {number} index - Index in quizQuestions array
+     * @returns {string} The saved note text (or empty string)
+     */
+    function getQuizNote(index) {
+      const q = quizQuestions[index];
+      if (!q) return '';
+      const key = 'quiz_note_' + q.question_id;
+      return localStorage.getItem(key) || '';
+    }
+
+    /**
+     * saveQuizNote(index, text) - Save a note for a quiz question.
+     *
+     * @param {number} index - Index in quizQuestions array
+     * @param {string} text - The note text
+     */
+    function saveQuizNote(index, text) {
+      const q = quizQuestions[index];
+      if (!q) return;
+      const key = 'quiz_note_' + q.question_id;
+      localStorage.setItem(key, text);
+    }
+
+    /**
+     * showReviewSummary() - Show the review summary after quiz ends.
+     *
+     * Lists all questions with correct/wrong labels and flagged questions first.
+     * Allows clicking to revisit any question in review mode.
+     */
+    function showReviewSummary() {
+      document.getElementById('quiz-nav-controls').style.display = 'none';
+      document.getElementById('quiz-question-area').style.display = 'none';
+      document.getElementById('quiz-review-area').style.display = 'block';
+
+      let score = 0;
+      for (const c of quizCorrect) {
+        if (c) score++;
+      }
+      const total = quizQuestions.length;
+      const percentage = Math.round((score / total) * 100);
+      let grade = '';
+      if (percentage >= 90) grade = '&#x1F389; Excellent!';
+      else if (percentage >= 70) grade = '&#x1F44D; Good job!';
+      else if (percentage >= 50) grade = '&#x1F4AA; Keep practicing!';
+      else grade = '&#x1F4DA; Study more and try again!';
+
+      // Build list of questions with status
+      let listHtml = '';
+      for (let i = 0; i < quizQuestions.length; i++) {
+        const q = quizQuestions[i];
+        const userAnswer = quizAnswers[i] || '-';
+        const isCorrect = quizCorrect[i];
+        const isFlagged = quizFlagged.includes(i);
+        const noteText = getQuizNote(i);
+
+        const answered = quizAnswers[i] !== undefined;
+        const statusIcon = !answered ? '&#x2753;' : (isCorrect ? '&#x2705;' : '&#x274C;');
+        const statusClass = !answered ? '' : (isCorrect ? 'correct' : 'wrong');
+        const flagIcon = isFlagged ? ' &#x2B50;' : '';
+
+        listHtml += `
+          <div class="q-row clickable" onclick="reviewQuestion(${i})" style="cursor:pointer;padding:var(--space-sm);border-bottom:1px solid var(--border);${isFlagged ? 'background:rgba(255,193,7,0.1);' : ''}">
+            <span style="display:flex;align-items:center;gap:var(--space-xs);flex-wrap:wrap;">
+              <span class="${statusClass}" style="font-size:var(--font-size-lg);">${statusIcon}</span>
+              <span style="flex:1;">${truncateText(escapeHtml(getQuestionText(q)), 70)}</span>
+              <span class="source-badge">${escapeHtml(q.source_name)}</span>
+              ${flagIcon}
+              ${noteText ? '<span style="font-size:var(--font-size-sm);color:var(--text-secondary);">&#x1F4DD;</span>' : ''}
+            </span>
+          </div>
+        `;
+      }
+
+      const area = document.getElementById('quiz-review-area');
+      area.innerHTML = `
+        <div style="text-align:center;padding:var(--space-md);border-bottom:1px solid var(--border);margin-bottom:var(--space-md);">
+          <h2 style="font-size:var(--font-size-xxl);">${grade}</h2>
+          <p style="font-size:var(--font-size-xl);margin:var(--space-sm) 0;">
+            ${score} / ${total} correct
+          </p>
+          <p style="font-size:var(--font-size-lg);color:var(--text-secondary);">
+            ${percentage}%
+          </p>
+          <p style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-top:var(--space-sm);">
+            Click any question below to review it.
+          </p>
+          <div style="display:flex;gap:var(--space-sm);justify-content:center;margin-top:var(--space-md);flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="showQuizSetup()">&#x1F504; Try Again</button>
+            <button class="btn" onclick="showStudyMode()">&#x1F50D; Study Questions</button>
+          </div>
+        </div>
+        <div style="max-height:60vh;overflow-y:auto;">${listHtml}</div>
+      `;
+
+      // Hide timer and progress
+      document.getElementById('quiz-timer').style.display = 'none';
+      document.getElementById('quiz-progress-bar').style.display = 'none';
+      document.getElementById('quiz-q-num').style.display = 'none';
+    }
+
+    /**
+     * reviewQuestion(index) - Jump to a specific question in review mode.
+     *
+     * @param {number} index - Index in quizQuestions array
+     */
+    function reviewQuestion(index) {
+      quizReviewMode = true;
+      document.getElementById('quiz-review-area').style.display = 'none';
+      document.getElementById('quiz-question-area').style.display = 'block';
+      document.getElementById('quiz-nav-controls').style.display = 'flex';
+
+      // Hide flag button in review mode
+      document.getElementById('quiz-flag-btn').style.display = 'none';
+
+      showQuizQuestion(index);
+    }
+
+    /**
+     * updateTimerDisplay() - Update the timer display with remaining time.
+     */
+    function updateTimerDisplay() {
+      // Calculate minutes and seconds
+      const minutes = Math.floor(quizTimeLeft / 60);
+      const seconds = quizTimeLeft % 60;
+
+      // Pad with leading zero: 5 → "05"
+      const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+      const timerEl = document.getElementById('quiz-timer');
+      timerEl.textContent = display;
+
+      // ─── Visual warnings ───
+      timerEl.className = '';
+      if (quizTimeLeft < 60) {
+        timerEl.classList.add('danger');  // Last minute - red + pulse
+      } else if (quizTimeLeft < 300) {
+        timerEl.classList.add('warning');  // Last 5 minutes - amber
+      }
+    }
+
+    /**
+     * endQuizEarly() - User clicked "End Quiz" button.
+     */
+    function endQuizEarly() {
+      // Confirm with the user before ending
+      // confirm() shows a native browser dialog with OK/Cancel
+      // Learn confirm: https://www.w3schools.com/jsref/met_win_confirm.asp
+      if (confirm('Are you sure you want to end the quiz? Your progress will be saved.')) {
+        endQuiz();
+      }
+    }
+
+    /**
+     * endQuiz() - Finish the quiz, save history, and show review summary.
+     */
+    function endQuiz() {
+      if (quizEnded) return;  // Prevent double-ending
+      quizEnded = true;
+
+      // ─── Stop timer ───
+      // clearInterval() stops the timer function we started with setInterval()
+      // Learn clearInterval: https://www.w3schools.com/jsref/met_win_clearinterval.asp
+      if (quizTimer) {
+        clearInterval(quizTimer);
+        quizTimer = null;
+      }
+
+      // ─── Calculate score ───
+      let score = 0;
+      for (const c of quizCorrect) {
+        if (c) score++;
+      }
+      const total = quizQuestions.length;
+
+      // ─── Save to quiz history ───
+      saveQuizHistory(score, total);
+
+      // ─── Show review summary ───
+      // This shows all questions with correct/wrong labels and allows revisiting
+      showReviewSummary();
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 8: BOOKMARKS                                      ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Bookmarks let users save questions for later review.
+    // Data stored in the browser's localStorage (persists across sessions).
+    // ==============================================================
+
+    /**
+     * getBookmarks() - Read bookmarks from localStorage.
+     *
+     * @returns {number[]} Array of question IDs that are bookmarked.
+     *
+     * localStorage stores strings. We store a JSON array of question IDs.
+     * JSON.parse() converts the string back to a JavaScript array.
+     *
+     * Learn JSON: https://www.w3schools.com/js/js_json.asp
+     */
+    function getBookmarks() {
+      try {
+        const data = localStorage.getItem(BK_KEY);
+        return data ? JSON.parse(data) : [];
+        // JSON.parse('null') returns null
+        // JSON.parse('[1,2,3]') returns [1, 2, 3]
+      } catch {
+        return [];  // If anything fails, return empty array
+      }
+    }
+
+    /**
+     * saveBookmarks(bookmarks) - Save bookmarks array to localStorage.
+     *
+     * @param {number[]} bookmarks - Array of question IDs
+     *
+     * JSON.stringify() converts a JavaScript array to a JSON string.
+     * We store this string in localStorage.
+     */
+    function saveBookmarks(bookmarks) {
+      localStorage.setItem(BK_KEY, JSON.stringify(bookmarks));
+    }
+
+    /**
+     * toggleBookmark(questionId) - Add or remove a bookmark for a question.
+     *
+     * @param {number} questionId - The question ID to toggle
+     */
+    function toggleBookmark(questionId) {
+      let bookmarks = getBookmarks();
+
+      if (bookmarks.includes(questionId)) {
+        // Remove bookmark
+        bookmarks = bookmarks.filter(id => id !== questionId);
+      } else {
+        // Add bookmark
+        bookmarks.push(questionId);
+      }
+
+      saveBookmarks(bookmarks);
+
+      // ─── Re-render if we're viewing details ───
+      if (!document.getElementById('question-view').classList.contains('hidden')) {
+        const q = allQuestions.find(x => x.question_id === questionId);
+        if (q) renderQuestionDetail(q, 'question-detail', true, quizAnswers[quizQuestions.indexOf(q)] || null);
+      }
+
+      // Re-render bookmarks list if showing
+      if (!document.getElementById('bookmarks-view').classList.contains('hidden')) {
+        renderBookmarks();
+      }
+    }
+
+    /**
+     * renderBookmarks() - Display all bookmarked questions.
+     */
+    function renderBookmarks() {
+      const bookmarks = getBookmarks();
+      const listEl = document.getElementById('bookmark-list');
+
+      if (bookmarks.length === 0) {
+        listEl.innerHTML = '<p style="color:var(--text-secondary); padding:var(--space-md);text-align:center;">No bookmarks yet. Click the bookmark icon on any question to add it here.</p>';
+        return;
+      }
+
+      // Find all bookmarked questions from allQuestions array
+      const bookmarkedQs = allQuestions.filter(q => bookmarks.includes(q.question_id));
+
+      // Store globally for navigation
+      window.bookmarkedQuestions = bookmarkedQs;
+
+      // Render as rows
+      listEl.innerHTML = bookmarkedQs.map((q, i) => {
+        const qText = getQuestionText(q);
+        return `
+          <div class="q-row" onclick="showQuestionDetail(${i}, bookmarkedQuestions)">
+            <span class="source-badge">${escapeHtml(q.source_name)}</span>
+            ${escapeHtml(truncateText(qText, 100))}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 9: NOTES (Deep Understanding)                     ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Each question can have a personal note for study.
+    // ==============================================================
+
+    /**
+     * getNote(questionId) - Read a note from localStorage.
+     *
+     * @param {number} questionId
+     * @returns {string} The note text, or empty string if none
+     */
+    function getNote(questionId) {
+      try {
+        const data = localStorage.getItem(NT_KEY + '_' + questionId);
+        return data || '';
+      } catch {
+        return '';
+      }
+    }
+
+    /**
+     * saveNote(questionId, text) - Save a note to localStorage.
+     *
+     * @param {number} questionId
+     * @param {string} text - The note content
+     */
+    function saveNote(questionId, text) {
+      try {
+        localStorage.setItem(NT_KEY + '_' + questionId, text);
+      } catch (e) {
+        // localStorage might be full or disabled - silently ignore
+        console.warn('Could not save note:', e);
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 10: STATISTICS                                    ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Track quiz attempts, scores, and individual question answers.
+    // ==============================================================
+
+    /**
+     * getQuizHistory() - Read quiz history from localStorage.
+     *
+     * @returns {Array} Array of quiz session objects
+     */
+    function getQuizHistory() {
+      try {
+        const data = localStorage.getItem(QH_KEY);
+        return data ? JSON.parse(data) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    /**
+     * saveQuizHistory(score, total) - Save a completed quiz session.
+     *
+     * @param {number} score - Number of correct answers
+     * @param {number} total - Total questions
+     */
+    function saveQuizHistory(score, total) {
+      const history = getQuizHistory();
+
+      // Create a session object
+      // new Date().toISOString() returns current time as ISO string:
+      // "2026-07-07T15:30:00.000Z"
+      // Learn Date: https://www.w3schools.com/jsref/jsref_obj_date.asp
+      const session = {
+        date: new Date().toISOString(),
+        score: score,
+        total: total,
+        percentage: Math.round((score / total) * 100)
+      };
+
+      // Add to the BEGINNING of the array (newest first)
+      history.unshift(session);
+
+      // Keep only last 50 sessions
+      if (history.length > 50) {
+        history.length = 50;
+      }
+
+      localStorage.setItem(QH_KEY, JSON.stringify(history));
+    }
+
+    /**
+     * addToQuizHistory(questionId, answer, isCorrect) - Record individual answer for stats.
+     */
+    function addToQuizHistory(questionId, answer, isCorrect) {
+      const key = 'dlesp_answers';
+      let answers = {};
+      try {
+        const data = localStorage.getItem(key);
+        if (data) answers = JSON.parse(data);
+      } catch {}
+
+      // Track how many times this question was attempted and correct
+      if (!answers[questionId]) {
+        answers[questionId] = { attempts: 0, correct: 0 };
+      }
+      answers[questionId].attempts++;
+      if (isCorrect) answers[questionId].correct++;
+
+      localStorage.setItem(key, JSON.stringify(answers));
+    }
+
+    /**
+     * renderStats() - Display all statistics.
+     */
+    function renderStats() {
+      const history = getQuizHistory();
+      const container = document.getElementById('stats-content');
+
+      if (history.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:var(--space-xl);">No quiz history yet. Take a quiz to see your stats!</p>';
+        return;
+      }
+
+      // ─── Calculate overall stats ───
+      let totalScore = 0;
+      let totalQuestions = 0;
+      let bestPercentage = 0;
+
+      for (const session of history) {
+        totalScore += session.score;
+        totalQuestions += session.total;
+        if (session.percentage > bestPercentage) {
+          bestPercentage = session.percentage;
+        }
+      }
+
+      const overallPct = Math.round((totalScore / totalQuestions) * 100);
+
+      // ─── Build stats HTML ───
+      let html = `
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">${history.length}</div>
+            <div class="stat-label">Quizzes Taken</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">${overallPct}%</div>
+            <div class="stat-label">Overall Accuracy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">${totalScore}/${totalQuestions}</div>
+            <div class="stat-label">Total Correct</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">${bestPercentage}%</div>
+            <div class="stat-label">Best Score</div>
+          </div>
+        </div>
+      `;
+
+      // ─── Show recent quiz history ───
+      html += '<h3 style="margin-top:var(--space-md);">Recent Quizzes</h3>';
+      html += '<div class="scroll-container" style="max-height:300px;">';
+
+      for (const session of history.slice(0, 20)) {
+        // Format date for readability
+        const date = new Date(session.date);
+        const dateStr = date.toLocaleDateString(undefined, {
+          year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        });
+
+        let emoji = '&#x1F4DA;';
+        if (session.percentage >= 90) emoji = '&#x1F389;';
+        else if (session.percentage >= 70) emoji = '&#x1F44D;';
+        else if (session.percentage >= 50) emoji = '&#x1F4AA;';
+
+        html += `
+          <div class="q-row" style="display:flex;justify-content:space-between;align-items:center;">
+            <span>${emoji} ${dateStr}</span>
+            <span style="font-weight:600;">${session.score}/${session.total} (${session.percentage}%)</span>
+          </div>
+        `;
+      }
+
+      html += '</div>';
+
+      // ─── Add reset button ───
+      html += `
+        <div style="text-align:center;margin-top:var(--space-md);">
+          <button class="btn btn-danger btn-sm" onclick="clearStats()">Clear Statistics</button>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    /**
+     * clearStats() - Clear all quiz history (with confirmation).
+     */
+    function clearStats() {
+      if (confirm('Are you sure you want to clear all statistics? This cannot be undone.')) {
+        localStorage.removeItem(QH_KEY);
+        localStorage.removeItem('dlesp_answers');
+        renderStats();
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 11: DARK MODE                                     ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    // ==============================================================
+
+    /**
+     * toggleDarkMode() - Switch between light and dark color themes.
+     */
+    function toggleDarkMode() {
+      // document.body is the <body> element
+      // .classList.toggle('dark') adds 'dark' class if it's absent,
+      // or removes it if it's present.
+      // Learn classList.toggle: https://www.w3schools.com/jsref/prop_element_classlist.asp
+      document.body.classList.toggle('dark');
+
+      // Update the icon: 🌙 moon for dark mode, ☀️ sun for light mode
+      const isDark = document.body.classList.contains('dark');
+      document.getElementById('dark-icon').innerHTML = isDark ? '&#x2600;&#xFE0F;' : '&#x1F319;';
+
+      // Save preference
+      localStorage.setItem(DM_KEY, isDark ? 'dark' : 'light');
+    }
+
+    /**
+     * loadDarkModePreference() - Apply saved dark mode preference on startup.
+     */
+    function loadDarkModePreference() {
+      const pref = localStorage.getItem(DM_KEY);
+      if (pref === 'dark') {
+        document.body.classList.add('dark');
+        document.getElementById('dark-icon').innerHTML = '&#x2600;&#xFE0F;';
+      }
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 12: UTILITY FUNCTIONS                             ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // Small helper functions used throughout the app.
+    // ==============================================================
+
+    /**
+     * escapeHtml(text) - Convert special HTML characters to safe entities.
+     *
+     * This prevents Cross-Site Scripting (XSS) attacks where a user could
+     * inject <script> tags through question text.
+     *
+     * What it does:
+     *   <  →  &lt;
+     *   >  →  &gt;
+     *   &  →  &amp;
+     *   "  →  &quot;
+     *   '  →  &#039;
+     *
+     * Learn XSS prevention: https://www.w3schools.com/tags/ref_urlencode.asp
+     *
+     * @param {string} text - The raw text to escape
+     * @returns {string} The escaped, safe HTML text
+     */
+    function escapeHtml(text) {
+      if (!text) return '';
+      // .replace() replaces ALL occurrences of a pattern
+      // /&/g means: find ALL '&' characters (g = global flag)
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /**
+     * truncateText(text, maxLength) - Cut text to maxLength chars, add "..." if needed.
+     *
+     * @param {string} text - Input text
+     * @param {number} maxLength - Maximum characters
+     * @returns {string} Truncated text
+     */
+    function truncateText(text, maxLength) {
+      if (!text) return '';
+      if (text.length <= maxLength) return text;
+      // Cut at maxLength and add "..."
+      return text.substring(0, maxLength) + '...';
+    }
+
+    // ==============================================================
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║  SECTION 13: BOOTSTRAP (Startup Code)                      ║
+    // ╚══════════════════════════════════════════════════════════════╝
+    //
+    // This code runs IMMEDIATELY when the script loads.
+    // It initializes the application.
+    // ==============================================================
+
+    // ─── Load saved language preference ───
+    const savedLang = localStorage.getItem('dlesp_lang');
+    if (savedLang) {
+      currentLang = savedLang;
+      document.getElementById('lang-select').value = savedLang;
+    }
+
+    // ─── Apply dark mode preference ───
+    loadDarkModePreference();
+
+    // ─── Initialize the SQLite database ───
+    // This starts the async process of downloading and opening the DB.
+    // The 'await' is not used here at the top level; initSQL() handles
+    // its own async flow internally.
+    initSQL();
+
+    // ==============================================================
+    // END OF JAVASCRIPT
+    // ==============================================================
+  </script>
+
+</body>
+</html>

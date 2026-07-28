@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Panel de usuario</title>
+
+            <meta name="description" content="Autoescuela online para obtener el permiso de conducir">
+    
+    <meta name="facebook-domain-verification" content="76wasw7bgh7xkg4ahewpwgduvom89l">
+    <meta http-equiv="Content-Language" content="es-ES">
+    <meta name="keywords" content="test de autoescuela, test de conducir, test dgt, test del carnet, test de motocicleta, test moto, test de ciclomotor, test de examen, autoescuelas, autoescuela, tests, permiso de conducir, manual, permiso b, trafico, dgt">
+
+            <meta name="robots" content="index,follow">
+    
+    <meta name="distribution" content="global">
+    <meta name="resource-type" content="Document">
+
+    <meta property="og:title" content="Panel de usuario">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://practicatest.com/home">
+    <meta property="og:description" content="Autoescuela online para obtener el permiso de conducir">
+    <meta property="og:site_name" content="Practicatest España - DGT">
+    <meta property="og:locale" content="es_ES">
+
+            <meta property="og:image" content="https://practicatest.com/static/img/es/img_default.png">
+    
+    <!-- Fuentes y script ShareThis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://platform-api.sharethis.com/js/sharethis.js#property=6481f96a8bdd800012e15f60&product=inline-share-buttons&source=platform" async type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+          
+
+
+
+
+    <link type="image/x-icon" href="https://practicatest.com/static/img/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" href="https://practicatest.com/static/img/iconified/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://practicatest.com/static/img/iconified/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://practicatest.com/static/img/iconified/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://practicatest.com/static/img/iconified/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://practicatest.com/static/img/iconified/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://practicatest.com/static/img/iconified/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://practicatest.com/static/img/iconified/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://practicatest.com/static/img/iconified/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://practicatest.com/static/img/iconified/apple-touch-icon-180x180.png" />
+    <meta name="apple-mobile-web-app-title" content="Practicatest">
+    <meta name="application-name" content="Practicatest">
+
+    <link rel="stylesheet" href="https://practicatest.com/dist/css/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+<link id="bundle.themecss" href="https://practicatest.com/dist/css/theme.aveRAOn6.min.css" rel="stylesheet" type="text/css" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js" integrity="sha512-8WAv/Z7UaDv0U1DCJ3W1oul76HOvq2/9mc+IbOZGsTj9iwZnnCXL/0FS6GQKNR++krdfVn9kuAAQ6v2DqZ9uEQ==" crossorigin="anonymous" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
+    <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+        ! function(f, b, e, v, n, t, s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n, arguments): n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
+
+
+
+    
+        <!-- GTAG BLOQUEADO TEMPORALMENTE PARA PRUEBAS -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLGZ9WM7MD" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+        <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'AW-864335184', { 'debug_mode': false });
+            //gtag('config', 'UA-36235477-1');
+            gtag('config', 'G-PLGZ9WM7MD', { 'debug_mode': false });
+        </script>
+    
+
+
+
+    
+        <!-- TikTok Pixel Code Start -->
+        <script data-cfasync="false">
+            ! function(w, d, t) {
+                w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+                var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+                ;
+                n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+                e = document.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(n, e)
+            };
+
+
+            ttq.load('D92G0SRC77UD7MK33OCG');
+            ttq.page();
+            }(window, document, 'ttq');
+        </script>
+        <!-- TikTok Pixel Code End -->
+    
+
+<script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+            const is_premium = 0;
+    
+            const id_service = '';
+    
+    console.log("is_pr", is_premium + "+" + id_service);
+
+    function compruebaCookies() {
+
+        if (pais == 'ES') {
+            const btnAceptar = document.getElementById('btn-aceptar-cookies');
+            if (btnAceptar) {
+                btnAceptar.addEventListener('click', aceptarCookies);
+            }
+
+            if (typeof pais !== 'undefined' && pais === 'ES') {
+                const banner = document.getElementById('cookieBanner');
+                if (!banner) return;
+
+                // localStorage devuelve null si la clave no existe
+                const acepta = localStorage.getItem('aceptaCookies') === 'true';
+                banner.classList.toggle('d-none', acepta);
+            }
+        }
+
+        if (document.getElementById('redirectCountryModal')) {
+            const myModal = new bootstrap.Modal(document.getElementById('redirectCountryModal'), {
+                keyboard: false
+            });
+            //console.log(pais_plugin + "==" + pais + "==" + localStorage.pais);
+            if (pais_plugin == pais) {
+                myModal.hide();
+            } else {
+                if (localStorage.pais != undefined || pais_plugin == 'ZZ' || pais_plugin == '') {
+                    myModal.hide();
+                } else {
+                    myModal.show();
+                    /*setTimeout(function () {
+                        document.getElementById("redirectCountryModal").style.display = 'block';
+                    }, 0);*/
+
+                }
+            }
+        }
+    }
+
+
+
+    const d = new Date;
+    const fname = 'Himanshu';
+    const email = 'himanshubhai@hotmail.com';
+
+    function getCookie(name) {
+        let cookieArray = document.cookie.split(';');
+        for (let i = 0; i < cookieArray.length; i++) {
+            let cookiePair = cookieArray[i].split('=');
+            if (name == cookiePair[0].trim()) {
+                return decodeURIComponent(cookiePair[1]);
+            }
+        }
+        return null;
+    }
+
+
+    function fbq_custom(trace = '', event_name = '', data = {}, event_id, source_url = '') {
+
+        // Obtener '_fbp' y '_fbc' desde las cookies
+        let fbp = getCookie('_fbp');
+        let fbc = getCookie('_fbc');
+
+        // Si no hay _fbc pero sí fbclid en la URL, construir fbc manualmente
+        if (!fbc) {
+            let urlParams = new URLSearchParams(window.location.search);
+            let fbclid = urlParams.get('fbclid');
+            if (fbclid) {
+                fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+            }
+        }
+
+        console.log("fbp", fbp);
+        console.log("fbc", fbc);
+
+
+        if (email == '') delete data.em;
+        else data.em = sha256(email);
+        if (fname == '') delete data.fn;
+        else data.fn = sha256(fname);
+
+        data.country = sha256('es');
+        fbq(trace, event_name, data, event_id);
+        data.pais = 'ES'; 
+        data.lang  = 'es';
+        data.trace = trace;
+        data.event_name = event_name;
+        data.event_id = event_id.event_id;
+        data.source_url = (source_url == '') ? window.location.href : source_url;
+        data.fbp = fbp;
+        data.fbc = fbc;
+
+        fetch('https://practicatest.com/ajax/send-data-event', {
+        method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': (document.querySelector('meta[name="csrf-token"]') || {}).content || ''
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch((error) => console.error('Error:', error));
+
+    };
+
+            function ttq_custom(event_name, data = {}, event_id_str = '') {
+            if (typeof ttq === 'undefined') return;
+
+            var eid = event_id_str || ('TT-' + d.getTime());
+            ttq.track(event_name, data);
+
+            var payload = {
+                pais: 'ES',
+                lang: 'es',
+                trace: 'track',
+                event_name: event_name,
+                event_id: eid,
+                source_url: window.location.href,
+                platform: 'tiktok'
+            };
+            if (data.currency) payload.currency = data.currency;
+            if (data.value) payload.value = data.value;
+
+            fetch('https://practicatest.com/ajax/send-data-event-tiktok', {
+            method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': (document.querySelector('meta[name="csrf-token"]') || {}).content || ''
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(payload)
+        })
+        .then(function(r) { return r.json(); })
+            .then(function(d) { console.log('TikTok:', d); })
+            .catch(function(e) { console.error('TikTok Error:', e); });
+        };
+    </script>
+
+
+
+<link href="https://practicatest.com/static/fonts/css/fontawesome.css?v=20260710" rel="stylesheet" />
+<link href="https://practicatest.com/static/fonts/css/brands.css?v=20260710" rel="stylesheet" />
+<link href="https://practicatest.com/static/fonts/css/solid.css?v=20260710" rel="stylesheet" />
+<link href="https://practicatest.com/static/fonts/css/regular.css?v=20260710" rel="stylesheet" />
+<link href="https://practicatest.com/static/fonts/css/light.css?v=20260710" rel="stylesheet" />
+<script src="https://practicatest.com/static/js/csrf.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+
+            <link rel="manifest" href="https://practicatest.com/manifest_es.json">
+
+        
+
+            <!-- Facebook Pixel Code -->
+            <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+                fbq_custom('init', '573344393832167',{em: email, fn: fname, country: sha256('es')}, {event_id: 'PI-'+d.getTime()});
+                //fbq_custom('track', 'PageView',{}, {event_id: 'PI-'+d.getTime()});
+            </script>
+            <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=573344393832167&ev=PageView&noscript=1" /></noscript>
+            <!-- End Facebook Pixel Code -->
+
+        
+    
+
+
+    <meta name="csrf-token" content="f49ea8f6d9a33ac3222ab1b8f94ceb30373880e4a8ccea6be9e39c1add2d591e" />
+    <script src="https://practicatest.com/static/js/csrf.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+</head>
+
+<!-- Wrap all page content here -->
+<script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+    var plataforma = "PT";
+    var pais = "ES";
+    var pais_plugin = "ES";
+    var lang = "es";
+    var permiso_c = "B";
+    var rootURL = "https://practicatest.com/";
+    var newURL = "https://practicatest.com/";
+    var mode_test = "";
+    var tipo = "";
+    var minimo_aprobado = "";
+    var n_preguntas = "";
+    var tiempo = "";
+    var role = "3";
+    var id_test = "";
+    var seguimiento = "";
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '217961911730326',
+            cookie: true,
+            xfbml: true,
+            version: 'v7.0'
+        });
+        FB.AppEvents.logPageView();
+    };
+</script>
+
+    <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/es_ES/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+<!-- Google Sign-In SDK -->
+<script src="https://accounts.google.com/gsi/client" async defer type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+<script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+    // Google Client ID centralizado en application/Config.php (GOOGLE_CLIENT_ID)
+    var GOOGLE_CLIENT_ID = '466288808925-rprvc9lcvo32dvtusbppsi26akok6drc.apps.googleusercontent.com';
+</script>
+
+<script src="https://practicatest.com/dist/js/lang/es_ES.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+<body class="d-flex flex-column min-vh-100">
+    
+    <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasMenu" data-bs-backdrop="true" aria-labelledby="offcanvasMenuLabel">
+            <nav class="ms-slidebar">
+        <div class="sb-slidebar-container">
+
+            <header class="ms-slidebar-header">
+                                    <div class="ms-slidebar-title">
+                        <div id="diagram-box">
+                            <div id="diagram-sidebar" class="diagram"></div>
+                            <a id="btn_info_diagram" href="#avanceModal" role="button" data-bs-toggle="modal" class="btn-circle btn-circle-xxs btn-circle-raised btn-circle-default"><i class="fal fa-info fs-10"></i></a>
+                        </div>
+                        <div class="ms-slidebar-t ms-slidebar-text mt-1">
+                            <span>Hola Himanshu,</span><br>Estado: <div id="t_pr" class="badge badge-warning"></div>
+                        </div>
+                    </div>
+                                            <div class="ms-slidebar-title bg-success">
+                            <div class="ms-slidebar-t ms-slidebar-offer">
+                                                                    Comprar cuenta Premium <a class="btn btn-raised btn-xs m-0" href="https://practicatest.com/ofertas?permiso=B">Comprar</a>
+                                                            </div>
+                        </div>
+                    
+                            </header>
+            <ul class="ms-slidebar-menu bg-body-secondary" id="slidebar-menu" role="tablist" aria-multiselectable="true">
+                                    <li class="current">
+                        <a class="link" href="https://practicatest.com/home">
+                            <i class="fal fa-home" aria-hidden="true"></i> Mi cuenta
+                        </a>
+                    </li>
+                                <li class="">
+                    <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#slidebar-menu" href="#menuTest" aria-expanded="false" aria-controls="menuTest">
+                        <i class="fal fa-square-check"></i> Test DGT</a>
+                    <ul id="menuTest" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuTest">
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-B" title="test permiso b"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso B</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-A2-A1" title="test permiso a2"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso A2/A1</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-AM" title="test permiso AM ciclomotor"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso AM</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-C" title="test permiso C camión"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso C</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-D" title="test permiso D autobús"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso D</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-BE" title="test permiso B+E remolque"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso B+E</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-CE-DE" title="test permiso c+e y d+e remolque"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso C+E/D+E</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-CAP" title="test permiso CAP"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso CAP</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/permiso-ADR" title="test permiso ADR"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso ADR</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/tests/recuperacion-puntos" title="test permiso puntos"><i class="fal fa-angle-right" aria-hidden="true"></i> Permiso por Puntos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#slidebar-menu" href="#menuTemario" aria-expanded="false" aria-controls="menuTemario">
+                        <i class="fal fa-book" aria-hidden="true"></i>Temario DGT
+                    </a>
+                    <ul id="menuTemario" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuTemario">
+                        <li>
+                            <a href="https://practicatest.com/temario" title="libro en papel"><i class="fal fa-angle-right" aria-hidden="true"></i> Temario / Resumen Online</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/temario/libros-de-conducir" title="libro en papel"><i class="fal fa-angle-right" aria-hidden="true"></i> Libros en Papel</a>
+                        </li>
+                        <li>
+                            <a href="https://practicatest.com/temario/permiso-B/senales-verticales/59" title="libro en papel"><i class="fal fa-angle-right" aria-hidden="true"></i> Señales de
+                                tráfico</a>
+                        </li>
+                    </ul>
+                </li>
+                                    <li class="">
+                        <a class="link" href="https://practicatest.com/ofertas#permisoB">
+                            <i class="fal fa-star" aria-hidden="true"></i>Cuenta Premium
+                        </a>
+                    </li>
+                                                    <li class="">
+                        <a class="link" href="https://practicatest.com/como-funciona">
+                            <i class="fal fa-cogs" aria-hidden="true"></i>Cómo funciona
+                        </a>
+                    </li>
+                                                <div class="mt-1"></div>
+                                <li class="">
+                    <a class="link" href="https://practicatest.com/buscador-autoescuelas">
+                        <i class="fal fa-magnifying-glass-location" aria-hidden="true"></i>Autoescuelas
+                    </a>
+                </li>
+                <li class="">
+                    <a class="link" href="https://practicatest.com/certificado-medico-psicotecnico">
+                        <i class="fal fa-file-certificate" aria-hidden="true"></i>Certificados Médicos
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="link" href="#modal_send_message" role="button" data-bs-toggle="modal">
+                        <i class="fal fa-phone-square" aria-hidden="true"></i>Contactar
+                    </a>
+                </li>
+
+            </ul>
+            <div class="mt-1"></div>
+
+            <div class="ms-slidebar-social ms-slidebar-block text-dark">
+                <h4 class="ms-slidebar-block-title">Ve nuestras historias de éxito en INSTAGRAM</h4>
+                <div class="ms-slidebar-social">
+                    <a target="blank" href="https://www.instagram.com/practicatest.cl/" class="btn-circle btn-circle-raised btn-circle-sm btn-instagram">
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                    </a>
+                    <a target="blank" href="https://www.facebook.com/PracticaTestChile/" class="btn-circle btn-circle-raised btn-circle-sm btn-facebook">
+                        <i class="fa-brands fa-facebook-f fa-xl"></i>
+
+                    </a>
+                    <a target="blank" href="https://www.youtube.com/channel/UCG3yn1oPqRM5-IzWMxgx01w" class="btn-circle btn-circle-raised btn-circle-sm btn-youtube">
+                        <i class="fa-brands fa-youtube fa-xl"></i>
+
+                    </a>
+                    <a target="blank" href="https://tiktok.com/@practicatest.cl" class="btn-circle btn-circle-raised btn-circle-sm btn-github"><i class="fa-brands fa-tiktok fa-xl"></i></a>
+                </div>
+            </div>
+        </div>
+
+</nav>    </div>
+    <!-- Desktop Menu -->
+    <div class="container-fluid container-lg">
+        <div class="d-flex justify-content-between align-items-center gap-3">
+            <a href="https://practicatest.com/">
+                                    <img id="logo-image" title="Practicatest España" src="https://practicatest.com/static/img/logo_es.png" />
+                            </a>
+
+
+            <div class="d-flex gap-2">
+                                                                                        <div class="d-none d-md-block">
+                                <a href="https://practicatest.com/ofertas?permiso=B" class="btn btn-raised btn-success px-4 d-none d-md-block" role="button">Hazte premium</a>
+                            </div>
+                                                                <div class="d-flex gap-2">
+
+                        <a href="https://practicatest.com/home?cambiar-curso=1" class="btn btn-raised btn-warning px-4" role="button">
+                                                            Permiso B
+                                                        <i class="fa-light fa-chevron-down me-0"></i>
+                        </a>
+                        <div class="btn-group">
+                            <button class="btn btn-raised btn-white dropdown-toggle px-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><i class="fal fa-user me-0"></i> <i class="fa-light fa-chevron-down me-0"></i></button>
+                            <ul class="dropdown-menu dropdown-toggle" aria-labelledby="dropdownMenuButton">
+                                                                    <li class="bg-blue-light">
+                                        <a class="dropdown-item" href="#"><span class="__cf_email__" data-cfemail="3b5352565a5548534e59535a527b53544f565a525715585456">[email&#160;protected]</span></a>
+                                    </li>
+                                                                <li><a class="dropdown-item" href="https://practicatest.com/aprobado">Darme de Baja ¡Aprobado!</a></li>
+                                <li><a class="dropdown-item" href="https://practicatest.com/change-pass">Cambiar Contraseña</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="https://practicatest.com/logout">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+
+                                            </div>
+                            </div>
+
+
+        </div>
+    </div>
+    <main class="flex-grow-1">
+        <nav class="navbar navbar-expand-md navbar-menu">
+            <div class="container-fluid container-lg">
+                <div class="d-md-none">
+                                            <a href="https://practicatest.com/home" class="btn btn-raised btn-white btn-xs" role="button"><i class="fal fa-2x fa-home m-0"></i></a>
+                                                                                    <a href="https://practicatest.com/ofertas?permiso=B" class="btn btn-raised btn-success btn-sm" role="button">Premium</a>
+                                                                            <button type="button" class="btn btn-xs btn-white btn-raised" data-bs-toggle="modal" data-bs-target="#countryModal"><i class="fal fa-globe fa-2x m-0"></i></button>
+                                    </div>
+                <button class="navbar-toggler px-2 fs-12" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                    <div class="text-white">Menu</div><br><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+            <li class="nav-item current">
+            <a class="nav-link" href="https://practicatest.com/home">
+                <i class="fa-light fa-home fa-3x" aria-hidden="true"></i>
+                <h3>Mi cuenta</h3>
+            </a>
+        </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="https://practicatest.com/tests">
+            <i class="fa-light fa-square-check fa-3x" aria-hidden="true"></i>
+            <h3>Exámenes</h3>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="https://practicatest.com/temario">
+            <i class="fa-light fa-book fa-3x" aria-hidden="true"></i>
+            <h3>Temario DGT</h3>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="https://practicatest.com/ofertas">
+            <i class="fa-light fa-tags fa-3x" aria-hidden="true"></i>
+            <h3>Premium</h3>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="https://practicatest.com/buscador-autoescuelas">
+            <i class="fa-light fa-magnifying-glass-location fa-3x" aria-hidden="true"></i>
+            <h3>Autoescuelas</h3>
+        </a>
+    </li>
+            <li class="nav-item ">
+            <a class="nav-link" href="https://practicatest.com/como-funciona">
+                <i class="fa-light fa-cogs fa-3x" aria-hidden="true"></i>
+                <h3>Cómo funciona</h3>
+            </a>
+        </li>
+                        <li class="nav-item ">
+        <a class="nav-link" href="https://practicatest.com/preguntas-frecuentes">
+            <i class="fa-light fa-question-circle fa-3x" aria-hidden="true"></i>
+            <h3>FAQ</h3>
+        </a>
+    </li>
+</ul>                </div>
+            </div>
+        </nav>
+
+        <div id="wrap">
+
+            
+            <div class="container-fluid container-lg">
+   <h1 class="fs-1">Mi curso del <b>Permiso B</b></h1>
+   <div class="card">
+      <ul class="nav nav-tabs nav-tabs-full shadow-2dp nav-tabs-3" role="tablist">
+         <li class="nav-item"><a class="nav-link withoutripple active" href="#stadistics" aria-controls="stadistics" role="tab" data-bs-toggle="tab"><i class="fa fa-tasks" aria-hidden="true"></i> Avance</a></li>
+                  <li class="nav-item"><a class="nav-link withoutripple" href="#historic_examens" aria-controls="historic_examens" role="tab" data-bs-toggle="tab"><i class="fa fa-list" aria-hidden="true"></i>Historial <span class="d-none d-md-inline-block">de exámenes</span> </a></li>
+      </ul>
+
+      <div class="card-body">
+         <div id="myTabContent" class="tab-content">
+            <!-- Pestaña Estadísticas -->
+            <div class="tab-pane fade show active" id="stadistics">
+               <div class="row">
+                  <div class="col-sm-4 col-md-3 col-xl-2">
+                     <div class="row">
+            <a href="#avanceModal" role="button" data-bs-toggle="modal" class="btn btn-xs btn-warning btn-raised btn-break px-4 m-0 mb-1">¿Puedo superar el examen?</a>
+        <div class="text-center mb-1">
+        <div class="circle" id="circles-1"></div>
+    </div>
+
+    <div class="card card-primary col-6 col-sm-12 fs-13 p-0">
+        <div class="card-body">
+            <b>Número de Test:</b><br>
+            <span class="pl-1"> Aprobados: 0</span><br>
+            <span class="pl-1"> Realizados: 0</span>
+        </div>
+    </div>
+
+
+    
+
+    <div id="box_regalo" class="card card-success-inverse" style="display: none;">
+        <div class="card-body pt-1 p-0 fs-13">
+            Un centro médico colaborador de Practicatest.com <b>te ha regalado una cuenta Premium de 1 mes (acceso test
+                DGT)</b> y un descuento para la revisión médica en su centro.
+            <p class="text-end no-mb">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#pop_cm" class="btn btn-raised btn-xs mt-0">+ Info</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="card card-info-inverse no-pb left card-color-menu2 p-1">
+        <div class="card-body p-0 fs-13">
+            
+            <a class="btn btn-raised btn-xs mt-0 p-05 w-100" href="https://practicatest.com/test-favoritos"><i class="fa fa-star fa-2xl fa-regular"></i> Mis Preguntas (0)</a>
+            <a class="btn btn-raised btn-xs mt-0 p-05 w-100 btn-break" id="calendario_alumno" href="https://practicatest.com/calendario?permiso=B"><i class="fa fa-calendar fa-2xl fa-regular"></i> Calendario de Clases</b></a>
+
+                            <hr class="m-0" />
+
+                <p class="fs-13 lh-22 m-0">Clases Online - Horario de 17:30h a 19:30h de Lunes a Viernes
+                                    <div class="d-flex"><a class="btn btn-raised btn-xs mt-0 px-4 btn-break btn-primary" href="https://practicatest.com/seminario"><i class="fa fa-video-camera fa-2xl fa-regular fs-12"></i>
+                        Live</a><a class="btn btn-raised btn-xs mt-0 px-4 btn-break btn-default" href="https://practicatest.com/seminario#listado">
+                        Clases Grabadas</a></div>
+                </p>
+                    </div>
+    </div>
+
+</div>
+
+<div id="pop_cm" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">¿Practicatest regala cuentas gratis?</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde hace unos meses hemos querido que todos nuestros alumnos tengan la oportunidad de conseguir
+                    cuentas Premium a 0€. El sistema es el siguiente:
+                <ul>
+                    <li>Hemos seleccionado algunos centros médicos de confianza para que repartan las cuentas a todos
+                        aquellos alumnos que tengan interés. Uno de los requisitos que les exigimos a los centros
+                        médicos, es que los alumnos de practicatest.com puedan conseguir el certificado médico a un
+                        precio más bajo.</li>
+                </ul>
+                </p>
+                <h4>Infórmate de cómo conseguirla: </h4>
+                <p>Llama al <b>934 159 474</b> o escribe al <b><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 628 525 581</b> para obtener tu cuenta gratis.</p>
+            </div>
+        </div>
+    </div>
+</div>                  </div>
+                  <div class="col-sm-8 col-md-9 col-xl-10">
+
+                                             <div class="row">
+                           <div class="col-md-8 mx-auto">
+                              <h4>
+                                 Empieza con <a href="https://practicatest.com/tests/permiso-B/online">un test</a> para evaluar tus conocimientos y prepararte para el examen real
+                              </h4>
+                              <br>
+                              <a href="https://practicatest.com/tests/permiso-B/online" class="btn btn-raised btn-lg btn-primary">
+                                 Empezar test conducir
+                              </a>
+                           </div>
+                        </div>
+                                       </div>
+               </div>
+            </div>
+
+            <!-- Pestaña Chart -->
+            <div role="tabpanel" class="tab-pane fade" id="chart">
+               <p><br>Esta gráfica muestra el <b>número de preguntas</b> realizadas hasta hoy.<br></p>
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="chart-container">
+                        <canvas id="canvas_sumtotal"></canvas>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="chart-container">
+                        <canvas id="canvas_mediafallos"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Pestaña Histórico de Exámenes -->
+            <div role="tabpanel" class="tab-pane fade" id="historic_examens">
+               <div class="row" id="content-test">
+                  <div class="col-sm-10 col-md-7 col-lg-6">
+                                             <div class="text-center py-5">
+                           <i class="fa fa-inbox fa-3x mb-3 text-muted d-block"></i>
+                           <p class="text-muted mb-0">Empieza con <a href="https://practicatest.com/tests/permiso-B/online">un test</a> para evaluar tus conocimientos.</p>
+                        </div>
+                                       </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+   </div>
+</div>
+
+<div class="modal modal-warning" id="repetirTestModal" tabindex="-1" role="dialog" aria-labelledby="repetirTestModalLabel">
+   <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h3 class="modal-title" id="repetirTestModalLabel">Sólo para Premium</h3>
+         </div>
+         <div class="modal-body">
+            <p>Solo podrán repetir los exámenes aquellos usuarios que sean Premium. Los usuarios Premium podrán realizar
+               los últimos exámenes de la DGT, los test por tema y los test de la semana. Todas las preguntas han sido
+               facilitadas por alumnos presentados al examen y profesores de autoescuelas.</p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+            <a href="https://practicatest.com/ofertas" class="btn btn-warning btn-raised m-0">Cuentas Premium</a>
+         </div>
+      </div>
+   </div>
+</div>
+            <div id="cookieBanner" class="alert alert-black alert-dismissible fade show bottom-0 start-0 w-100 rounded-0 border-0 py-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 d-none" role="alert">
+                <span class="small mb-md-0">
+                    Este sitio web usa cookies. Si permanece aquí acepta su uso. Consulte nuestra <a href="https://practicatest.com/terminos-condiciones" class="link-light text-decoration-underline">política de privacidad</a>.
+                </span>
+
+                <button id="btn-aceptar-cookies" type="button" class="btn btn-raised btn-primary btn-sm">Aceptar</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer d-print-none ">
+    <div class="container-fluid container-lg">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="footer-logo separate-icons">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a target="blank" href="https://www.facebook.com/PracticaTest" class="btn-circle btn-circle-raised btn-facebook"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                        <a target="blank" href="https://web.whatsapp.com/send?phone=34677641004" class="btn-circle btn-circle-raised btn-whatsapp"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                        <a target="blank" href="https://www.youtube.com/embed/DenUCwyWpOo?rel=0" class="btn-circle btn-circle-raised btn-youtube"><i class="fa-brands fa-youtube fa-xl"></i></a>
+                    </div>
+                    <div class="verified-box mb-2">
+                        <ul class="list-unstyled">
+                            <li>
+                                <img alt="Verified by Visa" src="https://practicatest.com/static/img/cc/ServiRed1.gif" id="Servired">
+                            </li>
+                            <li>
+                                <img alt="Verified by Visa" src="https://practicatest.com/static/img/cc/9999verified_sm.png" id="logoVerifiedByVisa">
+                            </li>
+                            <li>
+                                <img alt="Mastercard SecureCode" src="https://practicatest.com/static/img/cc/9999master_sm.png" id="logoMasterCardSecureCode">
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 footer-nav">
+                        <dt class="nav-title-footer">SOBRE PRACTICATEST</dt>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/quienes-somos">¿Quiénes somos?</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/informacion">Información permisos</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/terminos-condiciones">Términos y condiciones</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/autoescuela-online">Autoescuela online</a></dd>
+                    </div>
+                    <div class="col-sm-6 col-md-3 footer-nav">
+                        <dt class="nav-title-footer">AYUDA</dt>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/como-funciona">¿Cómo funciona?</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/preguntas-frecuentes">Preguntas frecuentes</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/terminos-condiciones/devoluciones">Política de devoluciones</a></dd>
+                                                    <dd class="nav-item-footer"><a href="https://practicatest.com/contacto">Contáctanos</a></dd>
+                                            </div>
+                    <div class="col-sm-6 col-md-3 footer-nav">
+                        <dt class="nav-title-footer">TEST DE CONDUCIR</dt>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/tests/permiso-B">Test de coche y exámenes</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/tests/permiso-A2-A1/online">Nuevos test DGT de moto</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/tests/permiso-CAP/online">Nuevos test CAP</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/dgt-test-en-ingles">Test DGT en inglés</a></dd>
+                    </div>
+                    <div class="col-sm-6 col-md-3 footer-nav">
+                        <dt class="nav-title-footer">TEMARIO</dt>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/temario/permiso-B">Temario permiso B</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/temario/permiso-A2-A1">Temario A2</a></dd>
+                        <dd class="nav-item-footer"><a href="https://practicatest.com/temario/permiso-A2-A1/resumen">Resumen A2</a></dd>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center">Copyright © 2026 Practicatest.com Todos los derechos reservados. Programación y diseño de <b>Vialtest.com</b></div>
+    </div>
+</div>
+    <div class="btn-back-top back-show d-print-none">
+        <a href="#" data-scroll="" id="back-top" class="btn-circle btn-circle-primary btn-circle-sm btn-circle-raised ">
+            <i class="fal fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
+            <div class="btn-bottom-send-message back-show d-print-none">
+            <a href="#modal_send_message" role="button" data-bs-toggle="modal" class="d-md-none btn-circle btn-circle-sm btn-whatsapp btn-circle-raised">
+                <i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i>
+            </a>
+            <a href="#modal_send_message" role="button" data-bs-toggle="modal" class="d-none d-md-inline-block btn btn-md btn-raised btn-whatsapp px-4">
+                <i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i> 677 64 10 04
+            </a>
+        </div>
+    
+            <div class="modal modal-primary d-print-none" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body center-block">
+                <h4 id="loadingModalLabel">Cargando</h4>
+                <img src="https://practicatest.com/static/img/loading.gif">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="pop_generic" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="pop_generic_title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="pop_generic_title"></h2>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row" id="modal_two_col">
+                    <div class="col-sm-6">
+                        <img class="pop_generic_icon" class="img-fluid" src="">
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <p class="pop_generic_content" class="mt-1"></p>
+                        <a href="#" class="btn btn-raised btn-primary pop_generic_button">OK</a>
+                    </div>
+                </div>
+                <div class="row" id="modal_one_col">
+                    <div class="col-sm-12 text-center">
+                        <p class="pop_generic_content" class="mt-1"></p>
+                        <a href="#" class="btn btn-raised btn-primary pop_generic_button">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal modal-info fade d-print-none" id="modalInfoGeneric" tabindex="-1" role="dialog" aria-labelledby="modalInfoGeneric">
+    <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-15" id="gmodal_title"></h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <img id="gmodal_img" class="img-fluid d-none" src="" />
+
+            <div class="embed-responsive embed-responsive-16by9 d-none">
+                <iframe id="v_16by9" class="embed-responsive-item" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="embed-responsive embed-responsive-4by3 d-none">
+                <iframe id="v_4by3" class="embed-responsive-item" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="embed-responsive embed-responsive-1by1 d-none">
+                <iframe id="v_1by1" class="embed-responsive-item" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-definitions fade d-print-none" id="definitions-modal" tabindex="-1" role="dialog" aria-labelledby="pop_definition_title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="pop_definition_title" class="modal-title text-center"></h4>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="w-100" id="pop_definition_photo"></div>
+                <div class="w-100" id="pop_definition_text"></div>
+            </div>
+
+        </div>
+    </div>
+</div>    
+                <div class="modal modal-warning fade" id="avanceModal" tabindex="-1" role="dialog" aria-labelledby="avanceModalLabel">
+        <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="avanceModalLabel">
+                        Niveles de aprendizaje
+                                            </h3>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+                                            <b>0-30%:</b> Acabas de comenzar el curso y debes continuar practicando.<br>
+                        <b>31-70%:</b> Tu esfuerzo está dando frutos, pero aún no estas preparado.<br>
+                        <b>71-84%:</b> Te acercas al objetivo y pronto podrás ir al examen.<br>
+                        <b><u>85-95%: ¡Ya estás listo para subir al examen!</u></b><br>
+                        <b>95-100%:</b> Eres un crack, NO es necesario llegar a este nivel para poder superar tu prueba teórica
+
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+            <div id="modal_search" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Buscador de Contenido</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-18">Indica que temario, información, normativa necesitas:</p>
+                <div class="row">
+                    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="https://cse.google.com/cse.js?cx=b98c486f47ddec1a2" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="languageModal" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="languageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="languageModalLabel">Would you prefer to view the website in English?</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                We’ve noticed you previously visited the English version of our site.
+                <br><br>
+                Would you like to continue in English or stay in Spanish?
+            </div>
+            <div class="modal-footer justify-content-around">
+                <button id="goEnglish" class="btn btn-raised btn-primary px-4">English</button>
+                <button id="staySpanish" class="btn btn-raised btn-secondary px-4" data-bs-dismiss="modal">Español</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="redirectCountryModal" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="redirectCountryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="redirectCountryModalLabel">¿De qué país quieres obtener tu licencia?</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-default btn-sm btn-raised px-4" onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('ES');return false;" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Cerrar</button>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-raised btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Países <i class="fa fa-chevron-down mx-0"></i>
+                            </button>
+                            <ul class="bg-primary dropdown-menu">
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('CL');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Chile</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('CO');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Colombia</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('CR');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Costa Rica</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('ES');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">España</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('UY');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Uruguay</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('BR');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">Brasil</button></li>
+                                <li><button onclick="if (!window.__cfRLUnblockHandlers) return false; guardarPais('ES');return false;" class="btn w-100 btn-primary btn-raised" data-cf-modified-3df7e0e47f58cd1fe38a4e6b-="">-Otros-</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_send_message" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="modal_send_messageLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal_send_messageLabel">Centro de Resolución de Dudas</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><a class="fs-18" href="https://practicatest.com/preguntas-frecuentes"><i class="fa fa-question-circle" aria-hidden="true"></i> Las 26 dudas más preguntadas de nuestros alumnos.</a></p>
+                <p><a class="fs-18 text-warning" href="https://practicatest.com/como-funciona"><i class="fa fa-star" aria-hidden="true"></i> ¿Cómo obtener tu licencia con PracticaTest?</a></p>
+                <p>Si tienes alguna duda sobre los servicios que ofrece practicatest.com ponte en contacto
+                    con nosotros de la siguiente manera:</p>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="mt-1 fs-18"><b><i class="text-success fa-brands fa-whatsapp" aria-hidden="true"></i> Vía WhatsApp:</b></h5>
+                                                    <a href="https://web.whatsapp.com/send?phone=34677641004&text=Hola,">Escribe al 677 64 10 04</a>
+                                            </div>
+                    <div class="col-sm-6">
+                        <h5 class="mt-1 fs-18"><b><i class="text-info fa fa-envelope mr-1" aria-hidden="true"></i> Vía Email:</b></h5>
+                        <a href="https://practicatest.com/contacto"><span class="__cf_email__" data-cfemail="3c55525a537c4c4e5d5f48555f5d48594f48125f5351">[email&#160;protected]</span></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="countryModal" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="countryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="countryModalLabel">Todos los permisos</h3>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <p>Selecciona el idioma y el país en el cual quieres conseguir tu carnet de conducir</p>
+                <h5 class="mb-1 fs-18"><b><i class="text-success fa fa-location-dot mr-1" aria-hidden="true"></i> Para España:</b></h5>
+                <ul>
+                    <li><a href="javascript:void(0)" data-bs-dismiss="modal">Carnet B, A2, A1, AM, C, D, E, ADR
+                            y CAP</a></li>
+                    <li><a href="https://practicatest.com/en">Carnet B en inglés</a></li>
+                </ul>
+                <h5 class="mb-1 fs-18"><b><i class="text-warning fa fa-location-dot mr-1" aria-hidden="true"></i> Para Chile:</b></h5>
+                <ul>
+                    <li><a href="https://practicatest.cl/">Licencia de conducir clase B, C, A1, A2, A3, A4,
+                            A5, D y E</a></li>
+                </ul>
+                <h5 class="mb-1 fs-18"><b><i class="text-warning fa fa-location-dot mr-1" aria-hidden="true"></i> Para Costa Rica:</b></h5>
+                <ul>
+                    <li><a href="https://practicatest.cr/">Licencia de conducir clase B1, A, B2-B4, C, D y
+                            E</a></li>
+                </ul>
+                <h5 class="mb-1 fs-18"><b><i class="text-warning fa fa-location-dot mr-1" aria-hidden="true"></i> Para Colombia:</b></h5>
+                <ul>
+                    <li><a href="https://practicatest.co/">Licencia de categoría A1, A2, B1, B2, B3, C1, C2
+                            y C3</a></li>
+                </ul>
+                <h5 class="mb-1 fs-18"><b><i class="text-warning fa fa-location-dot mr-1" aria-hidden="true"></i> Para Uruguay:</b></h5>
+                <ul>
+                    <li><a href="https://practicatest.uy/">Licencia de conducir Auto, Moto y Profesional</a>
+                    </li>
+                </ul>
+                <h5 class="mb-1 fs-18"><b><i class="text-success fa fa-location-dot mr-1" aria-hidden="true"></i> Para Brasil:</b></h5>
+                <ul>
+                    <li><a href="https://practicatest.com.br/">Carteira Nacional de Habilitação categorías A, B, C, D y E</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="modalBajas" class="modal modal-primary fade d-print-none" tabindex="-1" role="dialog" aria-labelledby="modalBajasLabel" aria-hidden="true">
+            <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modalBajasLabel">Confirmar baja</h4>
+                        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Quiero darme de baja de todos los avisos automáticos</br>¡Esperamos que vuelvas pronto a visitarnos!
+                    </div>
+                    <div class="modal-footer gap-2">
+                        <button type="button" class="btn btn-raised btn-default mt-0" data-bs-dismiss="modal">Salir</button>
+                        <a href="https://practicatest.com/unsubscribe/ok" class="btn btn-raised btn-primary mt-0" role="button">Acepto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal modal-warning" id="premiumModal" tabindex="-1" role="dialog" aria-labelledby="premiumModalLabel">
+        <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="premiumModalLabel">Sólo para Premium</h3>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <b>Los usuarios Premium tienen acceso a:</b>
+                    <ul>
+                        <li>Todos los exámenes de la DGT 2026 y sus explicaciones</li>
+                        <li>Test por tema</li>
+                        <li>Posibilidad de repetir exámenes</li>
+                        <li>Manuales, resúmenes, videos y audiolibros</li>
+                        <li>Profesor online 24h</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://practicatest.com/tests/permiso-B/online" class="mr-1">Continuar con los test gratuitos</a>
+                    <a href="https://practicatest.com/ofertas" class="btn btn-warning btn-raised m-0">Cómo ser Premium</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal modal-warning" id="premiumModal2" tabindex="-1" role="dialog" aria-labelledby="premiumModal2Label">
+        <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="premiumModal2Label">¿Qué usuario quieres ser?</h3>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                                            <p><b class="fs-18"><i class="fa fa-user" aria-hidden="true"></i> Usuario No Premium:</b> Podrás acceder
+                            a un Nuevo Test de Conducir Gratis diario. Recuerda <b>entrar cada día</b> para no perder ningún
+                            examen.</p>
+                                        <p><b class="fs-18"><i class="fa fa-star" aria-hidden="true"></i> Usuario Premium:</b> Podrás acceder a
+                        todos los test, <b>repetir todos los exámenes</b> las veces que desees, acceder a las últimas
+                        <b>preguntas de la DGT</b> y a los test inteligentes. <a href="https://practicatest.com/ofertas">Ver
+                            cuentas Premium</a>.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                                            <a href="https://practicatest.com/tests/permiso-B/online">Continuar con los test gratuitos</a>
+                                        <a href="https://practicatest.com/ofertas?permiso=B" class="btn btn-warning btn-raised m-0 ml-2">Comprar Premium</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="modal modal-warning fade" id="modalHorarios" tabindex="-1" role="dialog" aria-labelledby="modalHorariosLabel">
+        <div class="modal-dialog animate__animated animate__zoomIn" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalHorariosLabel">
+                        Sólo para Premium                    </h3>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Horarios de Clases Online con Zoom:</b>
+<ul>
+  <li><b>Permiso B: Teoria + Test DGT</b> de 17:30h a 19:30h. <u>Lunes a Viernes</u> con Mariajo</li>
+</ul>
+</p>                </div>
+                <div class="modal-footer">
+                                                                        <a href="https://practicatest.com/ofertas?permiso=B" class="btn btn-warning btn-raised m-0">Ser Premium</a>
+                                                            </div>
+            </div>
+        </div>
+    </div>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+  var urlActual = encodeURIComponent(window.location.href);
+  var is_logged = true;
+</script>
+
+<script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+  console.log('https://practicatest.com/');
+</script>
+
+<script id="bundle.sync" src="https://practicatest.com/dist/js/syncv0NA2Z85.min.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+<script id="bundle.async" src="https://practicatest.com/dist/js/asyncam9rc1rw.min.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels" type="3df7e0e47f58cd1fe38a4e6b-text/javascript"></script>
+
+
+
+  <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let hash = window.location.hash;
+      if (hash) {
+        let tab = document.querySelector('a[href="' + hash + '"]');
+        if (tab) {
+          let bsTab = new bootstrap.Tab(tab);
+          bsTab.show();
+          tabs();
+        }
+      }
+    });
+
+    $(function() {
+
+
+      var nivel = 0;
+      //var nivel = 40;
+      if (nivel >= 85) var color = '#4caf50';
+      else if (nivel >= 40) var color = '#ff9800';
+      else var color = '#f44336';
+      var myCircle16 = Circles.create({
+        id: 'circles-1',
+        radius: 65,
+        value: nivel,
+        maxValue: 100,
+        width: 10,
+        text: nivel + '%',
+        colors: ['#ddd', color],
+        duration: 500,
+        wrpClass: 'circles-wrp',
+        textClass: ''
+      });
+
+                    
+              $.post(newURL + "ajax/get-send-libro", function(data) {
+
+          if (data != '') {
+            if (pais == 'ES') {
+              if (lang == 'en') {
+                window.location.href = newURL + "en/send_book/" + data;
+              } else {
+                window.location.href = newURL + "direccion-envio/" + data;
+              }
+            } else {
+              window.location.href = newURL + "direccion-envio/" + data;
+            }
+          }
+        }, "json");
+      
+      if (document.getElementById('canvas_sumtotal')) {
+        var ctx = document.getElementById('canvas_sumtotal').getContext('2d');
+        var myChart = new Chart(ctx, {
+          options: {
+            responsive: true,
+            maintainAspectRatio: true
+          },
+          type: 'line',
+          data: {
+            labels: [],
+            datasets: [{
+              label: lang == 'en' ? 'Number of exams' : 'Nº preguntas acumuladas',
+              data: [],
+              backgroundColor: "rgba(52, 101, 174,0.4)"
+            }]
+          }
+        });
+      }
+
+      if (document.getElementById('canvas_mediafallos')) {
+        var ctx_error = document.getElementById('canvas_mediafallos').getContext('2d');
+        var myChart_error = new Chart(ctx_error, {
+          options: {
+            responsive: true,
+            maintainAspectRatio: true
+          },
+          type: 'line',
+          data: {
+            labels: [],
+            datasets: [{
+              label: lang == 'en' ? 'Average of errors' : 'Media de fallos',
+              data: [],
+              backgroundColor: "rgba(204, 51, 51,0.4)"
+            }]
+          }
+        });
+      }
+
+
+      setTimeout(function() {
+        $('.progress-bar').each(function() {
+          var me = $(this);
+          var perc = me.attr("aria-valuenow");
+          var current_perc = 0;
+
+          var progress = setInterval(function() {
+            if (current_perc == '0') {
+              me.css('width', '0%');
+            }
+
+            if (current_perc >= perc) {
+              clearInterval(progress);
+            } else {
+              current_perc += 1;
+              me.css('width', (current_perc) + '%');
+            }
+
+            if (current_perc > 9) {
+              me.text((current_perc) + '%');
+            }
+          }, 40);
+
+        });
+
+      }, 280);
+
+    });
+  </script>
+
+
+<script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+  $(document).ready(function() {
+
+    
+    
+    
+
+    
+  });
+</script>
+
+
+
+    
+        </script>
+
+    <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+      const myOffcanvas = document.getElementById('offcanvasMenu')
+      myOffcanvas.addEventListener('show.bs.offcanvas', event => {
+        get_level();
+      })
+
+      function get_level() {
+        var temp_per = 'B';
+        
+
+          $.post(newURL + "ajax/get-level", 'permiso_c=' + temp_per, function(data) {
+            $('#diagram-sidebar').html("");
+
+            if (data.nivel >= 85) var color = '#4caf50';
+            else if (data.nivel >= 40) var color = '#ff9800';
+            else var color = '#f44336';
+            var myCircle16 = Circles.create({
+              id: 'diagram-sidebar',
+              radius: 36,
+              value: data.nivel,
+              maxValue: 100,
+              width: 5,
+              text: data.nivel + '%',
+              colors: ['#ddd', color],
+              duration: 400,
+              wrpClass: 'circles-wrp',
+              textClass: 'color-white'
+            });
+
+            console.log(data.t_pr);
+            $("#t_pr").html(data.t_pr);
+          }, "json");
+              }
+    </script>
+
+    
+        <script type="3df7e0e47f58cd1fe38a4e6b-text/javascript">
+    $(document).ready(function() {
+
+                    $.post(newURL + "ajax/get-centros-medicos_bound", function(data) {
+
+                //var res = JSON.parse(data);
+
+                var mc = data.length;
+                if (mc > 0) {
+
+                    //console.log(data);
+
+                    $.each(data, function(i, item) {
+                        //console.log( data[i]['codigos']);
+                    });
+
+                    str = '';
+                    if (mc > 1) str = 'Se encontraron <a href="' + newURL +
+                        'renovar-carnet-de-conducir"><b>' + mc +
+                        ' centros</b></a> con oferta para obtener el certificado médico.';
+                    else if (mc == 1) str = 'Se encontró <a href="' + newURL +
+                        'renovar-carnet-de-conducir"><b>1 centro</b></a> con oferta para obtener el certificado médico.';
+
+                    if (str != '') {
+                        $("#box_cm").html("<h5>Buscador de centros médicos:</h5>" + str);
+                        $("#box_cm").show();
+                        $("#box_regalo").show();
+                    }
+                }
+
+            }, "json");
+        
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const isInEnglish = localStorage.getItem('is_in_english');
+
+        if (isInEnglish === 'true' && window.location.href !== "https://practicatest.com/temario/libros-de-conducir/driving-theory-book-in-english/31") {
+
+            const modal = new bootstrap.Modal(document.getElementById('languageModal'));
+            modal.show();
+
+            document.getElementById('goEnglish').addEventListener('click', function() {
+                window.location.href = newURL + 'en';
+            });
+
+            document.getElementById('staySpanish').addEventListener('click', function() {
+                localStorage.setItem('is_in_english', 'false');
+            });
+        }
+    });
+</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="3df7e0e47f58cd1fe38a4e6b-|49" defer></script></body>
+
+</html>
